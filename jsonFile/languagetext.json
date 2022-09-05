@@ -1,0 +1,914 @@
+{
+    "allText": [
+        {
+            "textId": "Select your Language",
+            "languageTextList": [
+                {
+                    "fr": "Choisissez votre langue"
+                },
+                {
+                    "ar": "اختر لغتك"
+                },
+                {
+                    "ja": "あなたが使う言語を選んでください"
+                }
+            ]
+        },
+        {
+            "textId": "Settings",
+            "languageTextList": [
+                {
+                    "fr": "Réglages"
+                },
+                {
+                    "ar": "إعدادات"
+                },
+                {
+                    "ja": "設定"
+                }
+            ]
+        },
+        {
+            "textId": "Face Book",
+            "languageTextList": [
+                {
+                    "fr": "Réglages"
+                },
+                {
+                    "ar": "إعدادات"
+                },
+                {
+                    "ja": "設定"
+                }
+            ]
+        },
+        {
+            "textId": "Vodaphone",
+            "languageTextList": [
+                {
+                    "fr": "ALLER"
+                },
+                {
+                    "ar": "اذهب"
+                },
+                {
+                    "ja": "GO"
+                }
+            ]
+        },
+        {
+            "textId": "Login",
+            "languageTextList": [
+                {
+                    "fr": "S'identifier"
+                },
+                {
+                    "ar": "تسجيل الدخول"
+                },
+                {
+                    "ja": "ログインする"
+                }
+            ]
+        },
+        {
+            "textId": "Register",
+            "languageTextList": [
+                {
+                    "fr": "S'inscrire"
+                },
+                {
+                    "ar": "تسجيل"
+                },
+                {
+                    "ja": "登録"
+                }
+            ]
+        },
+        {
+            "textId": "LOGIN",
+            "languageTextList": [
+                {
+                    "fr": "S'IDENTIFIER"
+                },
+                {
+                    "ar": "تسجيل الدخول"
+                },
+                {
+                    "ja": "ログインする"
+                }
+            ]
+        },
+        {
+            "textId": "Email",
+            "languageTextList": [
+                {
+                    "fr": "Email"
+                },
+                {
+                    "ar": "البريد الإلكتروني"
+                },
+                {
+                    "ja": "Eメール"
+                }
+            ]
+        },
+        {
+            "textId": "Password",
+            "languageTextList": [
+                {
+                    "fr": "Mot de passe"
+                },
+                {
+                    "ar": "كلمه السر"
+                },
+                {
+                    "ja": "パスワード"
+                }
+            ]
+        },
+        {
+            "textId": "Forgot Password ?",
+            "languageTextList": [
+                {
+                    "fr": "Mot de passe oublié ?"
+                },
+                {
+                    "ar": "هل نسيت كلمة المرور ؟"
+                },
+                {
+                    "ja": "パスワードをお忘れですか ？"
+                }
+            ]
+        },
+        {
+            "textId": "REGISTER",
+            "languageTextList": [
+                {
+                    "fr": "S'INSCRIRE"
+                },
+                {
+                    "ar": "تسجيل"
+                },
+                {
+                    "ja": "登録"
+                }
+            ]
+        },
+        {
+            "textId": "FristName",
+            "languageTextList": [
+                {
+                    "fr": "Prénom"
+                },
+                {
+                    "ar": "الاسم الاول"
+                },
+                {
+                    "ja": "ファーストネーム"
+                }
+            ]
+        },
+        {
+            "textId": "LastName",
+            "languageTextList": [
+                {
+                    "fr": "Nom de famille"
+                },
+                {
+                    "ar": "الكنية"
+                },
+                {
+                    "ja": "苗字"
+                }
+            ]
+        },
+        {
+            "textId": "Create Account",
+            "languageTextList": [
+                {
+                    "fr": "Créer un compte"
+                },
+                {
+                    "ar": "إنشاء حساب"
+                },
+                {
+                    "ja": "アカウントを作成する"
+                }
+            ]
+        },
+        {
+            "textId": "Add Call",
+            "languageTextList": [
+                {
+                    "fr": "Ajouter un appel"
+                },
+                {
+                    "ar": "إضافة اتصال"
+                },
+                {
+                    "ja": "通話を追加"
+                }
+            ]
+        },
+        {
+            "textId": "Contacts",
+            "languageTextList": [
+                {
+                    "fr": "Contacts"
+                },
+                {
+                    "ar": "جهات الاتصال"
+                },
+                {
+                    "ja": "連絡先"
+                }
+            ]
+        },
+        {
+            "textId": "Your",
+            "languageTextList": [
+                {
+                    "fr": "Votre"
+                },
+                {
+                    "ar": "الخاص بك"
+                },
+                {
+                    "ja": "君の"
+                }
+            ]
+        },
+        {
+            "textId": "Forgot Password",
+            "languageTextList": [
+                {
+                    "fr": "Mot de passe oublié"
+                },
+                {
+                    "ar": "هل نسيت كلمة المرور"
+                },
+                {
+                    "ja": "パスワードをお忘れですか"
+                }
+            ]
+        },
+        {
+            "textId": "Ente your email address or phone number to reset the password",
+            "languageTextList": [
+                {
+                    "fr": "Entrez votre adresse e-mail ou votre numéro de téléphone pour réinitialiser le mot de passe"
+                },
+                {
+                    "ar": "أدخل عنوان بريدك الإلكتروني أو رقم هاتفك لإعادة تعيين كلمة المرور"
+                },
+                {
+                    "ja": "メールアドレスまたは電話番号を入力して、パスワードをリセットします"
+                }
+            ]
+        },
+        {
+            "textId": "OR",
+            "languageTextList": [
+                {
+                    "fr": "OU"
+                },
+                {
+                    "ar": "أو"
+                },
+                {
+                    "ja": "または"
+                }
+            ]
+        },
+        {
+            "textId": "phone",
+            "languageTextList": [
+                {
+                    "fr": "téléphone"
+                },
+                {
+                    "ar": "هاتف"
+                },
+                {
+                    "ja": "電話"
+                }
+            ]
+        },
+        {
+            "textId": "Reset Password",
+            "languageTextList": [
+                {
+                    "fr": "réinitialiser le mot de passe"
+                },
+                {
+                    "ar": "إعادة تعيين كلمة المرور"
+                },
+                {
+                    "ja": "パスワードを再設定する"
+                }
+            ]
+        },
+        {
+            "textId": "Friends Request",
+            "languageTextList": [
+                {
+                    "fr": "Demande d'amis"
+                },
+                {
+                    "ar": "طلب صداقة"
+                },
+                {
+                    "ja": "友達リクエスト"
+                }
+            ]
+        },
+        {
+            "textId": "Show all",
+            "languageTextList": [
+                {
+                    "fr": "Afficher tout"
+                },
+                {
+                    "ar": "عرض الكل"
+                },
+                {
+                    "ja": "すべて表示する"
+                }
+            ]
+        },
+        {
+            "textId": "Suggest Friends",
+            "languageTextList": [
+                {
+                    "fr": "Suggérer des amis"
+                },
+                {
+                    "ar": "اقترح أصدقاء"
+                },
+                {
+                    "ja": "友人を示唆しています"
+                }
+            ]
+        },
+        {
+            "textId": "State",
+            "languageTextList": [
+                {
+                    "fr": "Etat"
+                },
+                {
+                    "ar": "حالة"
+                },
+                {
+                    "ja": "状態"
+                }
+            ]
+        },
+        {
+            "textId": "Follow",
+            "languageTextList": [
+                {
+                    "fr": "Suivre"
+                },
+                {
+                    "ar": "إتبع"
+                },
+                {
+                    "ja": "フォローする"
+                }
+            ]
+        },
+        {
+            "textId": "Following",
+            "languageTextList": [
+                {
+                    "fr": "Suivante"
+                },
+                {
+                    "ar": "التالية"
+                },
+                {
+                    "ja": "以下"
+                }
+            ]
+        },
+        {
+            "textId": "< Back",
+            "languageTextList": [
+                {
+                    "fr": "< Retour"
+                },
+                {
+                    "ar": "< عودة"
+                },
+                {
+                    "ja": "< 戻る"
+                }
+            ]
+        },
+        {
+            "textId": "Groups",
+            "languageTextList": [
+                {
+                    "fr": "Groupes"
+                },
+                {
+                    "ar": "مجموعات"
+                },
+                {
+                    "ja": "グループ"
+                }
+            ]
+        },
+        {
+            "textId": "Search Group",
+            "languageTextList": [
+                {
+                    "fr": "Groupe de recherche"
+                },
+                {
+                    "ar": "مجموعة البحث"
+                },
+                {
+                    "ja": "検索グループ"
+                }
+            ]
+        },
+        {
+            "textId": "Popular Groups",
+            "languageTextList": [
+                {
+                    "fr": "Groupes populaires"
+                },
+                {
+                    "ar": "مجموعات شعبية"
+                },
+                {
+                    "ja": "人気のあるグループ"
+                }
+            ]
+        },
+        {
+            "textId": "Feed",
+            "languageTextList": [
+                {
+                    "fr": "Alimentation"
+                },
+                {
+                    "ar": "تغذية"
+                },
+                {
+                    "ja": "フィード"
+                }
+            ]
+        },
+        {
+            "textId": "Friends",
+            "languageTextList": [
+                {
+                    "fr": "Copines"
+                },
+                {
+                    "ar": "اصحاب"
+                },
+                {
+                    "ja": "友達"
+                }
+            ]
+        },
+        {
+            "textId": "Messages",
+            "languageTextList": [
+                {
+                    "fr": "messages"
+                },
+                {
+                    "ar": "الرسائل"
+                },
+                {
+                    "ja": "メッセージ"
+                }
+            ]
+        },
+        {
+            "textId": "Setting",
+            "languageTextList": [
+                {
+                    "fr": "Réglage"
+                },
+                {
+                    "ar": "ضبط"
+                },
+                {
+                    "ja": "設定"
+                }
+            ]
+        },
+        {
+            "textId": "profile",
+            "languageTextList": [
+                {
+                    "fr": "profil"
+                },
+                {
+                    "ar": "الملف الشخصي"
+                },
+                {
+                    "ja": "プロフィール"
+                }
+            ]
+        },
+        {
+            "textId": "Contact",
+            "languageTextList": [
+                {
+                    "fr": "Contact"
+                },
+                {
+                    "ar": "اتصل"
+                },
+                {
+                    "ja": "連絡先"
+                }
+            ]
+        },
+        {
+            "textId": "Group",
+            "languageTextList": [
+                {
+                    "fr": "Groupe"
+                },
+                {
+                    "ar": "مجموعة"
+                },
+                {
+                    "ja": "グループ"
+                }
+            ]
+        },
+        {
+            "textId": "Type something",
+            "languageTextList": [
+                {
+                    "fr": "Tapez quelque chose"
+                },
+                {
+                    "ar": "اطبع شيئا"
+                },
+                {
+                    "ja": "何かを入力"
+                }
+            ]
+        },
+        {
+            "textId": "Folowers",
+            "languageTextList": [
+                {
+                    "fr": "Suiveurs"
+                },
+                {
+                    "ar": "فوليفرز"
+                },
+                {
+                    "ja": "フォリバー"
+                }
+            ]
+        },
+        {
+            "textId": "Vodaphone",
+            "languageTextList": [
+                {
+                    "fr": "Des postes"
+                },
+                {
+                    "ar": "المشاركات"
+                },
+                {
+                    "ja": "投稿"
+                }
+            ]
+        },
+        {
+            "textId": "ACCOUNT",
+            "languageTextList": [
+                {
+                    "fr": "COMPTE"
+                },
+                {
+                    "ar": "الحساب"
+                },
+                {
+                    "ja": "アカウント"
+                }
+            ]
+        },
+        {
+            "textId": "push Notification",
+            "languageTextList": [
+                {
+                    "fr": "notification push"
+                },
+                {
+                    "ar": "دفع الإخطار"
+                },
+                {
+                    "ja": "プッシュ通知"
+                }
+            ]
+        },
+        {
+            "textId": "Edit Profile",
+            "languageTextList": [
+                {
+                    "fr": "Editer le profil"
+                },
+                {
+                    "ar": "تعديل الملف الشخصي"
+                },
+                {
+                    "ja": "プロファイル編集"
+                }
+            ]
+        },
+        {
+            "textId": "Change Password",
+            "languageTextList": [
+                {
+                    "fr": "Changer le mot de passe"
+                },
+                {
+                    "ar": "غير كلمة السر"
+                },
+                {
+                    "ja": "パスワードを変更する"
+                }
+            ]
+        },
+        {
+            "textId": "Language",
+            "languageTextList": [
+                {
+                    "fr": "Langue"
+                },
+                {
+                    "ar": "لغة"
+                },
+                {
+                    "ja": "言語"
+                }
+            ]
+        },
+        {
+            "textId": "Theme Mode",
+            "languageTextList": [
+                {
+                    "fr": "Mode thème"
+                },
+                {
+                    "ar": "وضع الموضوع"
+                },
+                {
+                    "ja": "テーマモード"
+                }
+            ]
+        },
+        {
+            "textId": "SOCIAL ACCOUNTS",
+            "languageTextList": [
+                {
+                    "fr": "COMPTES SOCIAUX"
+                },
+                {
+                    "ar": "الحسابات الاجتماعية"
+                },
+                {
+                    "ja": "ソーシャルアカウント"
+                }
+            ]
+        },
+        {
+            "textId": "Facebook",
+            "languageTextList": [
+                {
+                    "fr": "Facebook"
+                },
+                {
+                    "ar": "موقع التواصل الاجتماعي الفيسبوك"
+                },
+                {
+                    "ja": "フェイスブック"
+                }
+            ]
+        },
+        {
+            "textId": "Twitter",
+            "languageTextList": [
+                {
+                    "fr": "Twitter"
+                },
+                {
+                    "ar": "تويتر"
+                },
+                {
+                    "ja": "ツイッター"
+                }
+            ]
+        },
+        {
+            "textId": "Google",
+            "languageTextList": [
+                {
+                    "fr": "Google"
+                },
+                {
+                    "ar": "جوجل"
+                },
+                {
+                    "ja": "グーグル"
+                }
+            ]
+        },
+        {
+            "textId": "Instagram",
+            "languageTextList": [
+                {
+                    "fr": "Instagram"
+                },
+                {
+                    "ar": "انستغرام"
+                },
+                {
+                    "ja": "インスタグラム"
+                }
+            ]
+        },
+        {
+            "textId": "Support",
+            "languageTextList": [
+                {
+                    "fr": "Soutien"
+                },
+                {
+                    "ar": "الدعم"
+                },
+                {
+                    "ja": "サポート"
+                }
+            ]
+        },
+        {
+            "textId": "Call us",
+            "languageTextList": [
+                {
+                    "fr": "Appelez nous"
+                },
+                {
+                    "ar": "اتصل بنا"
+                },
+                {
+                    "ja": "お電話ください"
+                }
+            ]
+        },
+        {
+            "textId": "Feedback",
+            "languageTextList": [
+                {
+                    "fr": "Retour d'information"
+                },
+                {
+                    "ar": "ردود الفعل"
+                },
+                {
+                    "ja": "フィードバック"
+                }
+            ]
+        },
+        {
+            "textId": "Privacy Policy",
+            "languageTextList": [
+                {
+                    "fr": "Politique de confidentialité"
+                },
+                {
+                    "ar": "سياسة الخصوصية"
+                },
+                {
+                    "ja": "個人情報保護方針"
+                }
+            ]
+        },
+        {
+            "textId": "Logout",
+            "languageTextList": [
+                {
+                    "fr": "Se déconnecter"
+                },
+                {
+                    "ar": "تسجيل خروج"
+                },
+                {
+                    "ja": "ログアウト"
+                }
+            ]
+        },
+        {
+            "textId": "Select theme mode",
+            "languageTextList": [
+                {
+                    "fr": "Sélectionnez le mode de thème"
+                },
+                {
+                    "ar": "حدد وضع السمة"
+                },
+                {
+                    "ja": "テーマモードを選択"
+                }
+            ]
+        },
+        {
+            "textId": "Light",
+            "languageTextList": [
+                {
+                    "fr": "Lumière"
+                },
+                {
+                    "ar": "ضوء"
+                },
+                {
+                    "ja": "光"
+                }
+            ]
+        },
+        {
+            "textId": "Dark",
+            "languageTextList": [
+                {
+                    "fr": "Foncée"
+                },
+                {
+                    "ar": "داكن"
+                },
+                {
+                    "ja": "闇"
+                }
+            ]
+        },
+        {
+            "textId": "Enter the Code ",
+            "languageTextList": [
+                {
+                    "fr": "Entrer le code"
+                },
+                {
+                    "ar": "ادخل الكود"
+                },
+                {
+                    "ja": "コードを入力します"
+                }
+            ]
+        },
+        {
+            "textId": "to Verify Your Phone",
+            "languageTextList": [
+                {
+                    "fr": "pour vérifier votre téléphone"
+                },
+                {
+                    "ar": "للتحقق من هاتفك"
+                },
+                {
+                    "ja": "お使いの携帯電話を確認するには"
+                }
+            ]
+        },
+        {
+            "textId": "Ente your email address or phone number to reset the password",
+            "languageTextList": [
+                {
+                    "fr": "Entrez votre adresse e-mail ou votre numéro de téléphone pour réinitialiser le mot de passe"
+                },
+                {
+                    "ar": "أدخل عنوان بريدك الإلكتروني أو رقم هاتفك لإعادة تعيين كلمة المرور"
+                },
+                {
+                    "ja": "メールアドレスまたは電話番号を入力して、パスワードをリセットします"
+                }
+            ]
+        },
+        {
+            "textId": "Send A new Code",
+            "languageTextList": [
+                {
+                    "fr": "Envoyer un nouveau code"
+                },
+                {
+                    "ar": "أرسل كود جديد"
+                },
+                {
+                    "ja": "新しいコードを送信する"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+enum CompanyPosition{
+
+  DIRECTOR,
+  AUTHORISED_REPRESENTATIVE,
+}
