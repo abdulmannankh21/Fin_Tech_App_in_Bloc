@@ -76,7 +76,8 @@ class _LoginState extends State<Login> {
                     alignment: Alignment.topLeft,
                     padding: EdgeInsets.only(top: 35, left: 40),
                     child: Text(
-                     "${loc.AppLocalizations.of(context)?.beneficiaries}",
+                     //"${loc.AppLocalizations.of(context)?.beneficiaries}",
+                      "Login",
                       style:Theme.of(context).textTheme.headlineMedium!.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w400,

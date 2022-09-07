@@ -4,6 +4,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/bottom_navigation/deposit/deposit_screen.dart';
 import 'package:flutter_app/core/app_configs/screen_names.dart';
 import 'package:flutter_app/core/utils/bottom_pop_up.dart';
 import 'package:flutter_app/core/utils/shared_preferences.dart';
@@ -191,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     child:Text(
 
 
-                                                      state.model.currency != null ?"${state.model.currency![0].balance!} " : "" ,
+                                                      "${state.model.wallet_balance!.balance}",
                                                       overflow: TextOverflow.ellipsis,
                                                       maxLines: 1,
                                                       style: _themeData.textTheme.headline6!
@@ -205,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   ),
                                                   Text(
 
-                                                    state.model.currency != null ? "${state.model.currency![0].code!} " : "",
+                                                    "${state.model.wallet_balance!.currency!} ",
 
                                                     overflow: TextOverflow.ellipsis,
                                                     textAlign: TextAlign.start,
@@ -224,7 +225,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               const Spacer(),
                                               GestureDetector(
                                                 onTap: () {
-                                                //  Navigator.of(context).push(MaterialPageRoute(builder: (context) => CreateBankAccount()));
+                                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => DepositScreen()));
                                                 },
                                                 child: const CircleAvatar(
                                                   backgroundColor:
@@ -251,7 +252,79 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
                           ),
-                          const SizedBox(height: 6.0),                      //!
+                          const SizedBox(height: 6.0),
+                          (state.model.currency != null)
+                              ?  Container(
+                            height: _size.height * 0.15,
+                            width: _size.width,
+                            child: ListView.builder(
+                              itemCount: state.model.currency!.length,
+                              scrollDirection: Axis.horizontal,
+                              shrinkWrap: true,
+                              physics: const ScrollPhysics(),
+                              itemBuilder: (context, index) {
+                                final _model =
+                                state.model.currency![index];
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 4.0,
+                                    vertical: 6.0,
+                                  ),
+                                  child: Card(
+                                    elevation: 4.0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                      BorderRadius.circular(12.0),
+                                    ),
+                                    child: Container(
+                                      width: _size.width * 0.32,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                        BorderRadius.circular(12.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            const Icon(
+                                              FontAwesomeIcons.wallet,
+                                              color:
+                                              ConstantColors.primaryCyan,
+                                              size: 20.0,
+                                            ),
+                                            const Spacer(),
+                                            AutoSizeText(
+                                              """${_model?.code} ${_model?.balance ?? ''}""",
+                                              maxFontSize: 16.0,
+                                              minFontSize: 10.0,
+                                              overflow: TextOverflow.ellipsis,
+                                              maxLines: 1,
+                                              style: _themeData
+                                                  .textTheme.headline6!
+                                                  .copyWith(
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                            Text(
+                                              "Wallet",
+                                              overflow: TextOverflow.ellipsis,
+                                              maxLines: 1,
+                                              style: _themeData
+                                                  .textTheme.caption,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                          ):Container(),
+
+                          const SizedBox(height: 6.0),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Row(

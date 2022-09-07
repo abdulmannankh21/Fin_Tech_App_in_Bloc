@@ -5,8 +5,12 @@ import 'response_model/request_type.dart';
 
 abstract class HttpService {
   Future<Response> handleGetRequest(
-      String path,
-      RequestType? type,
+      String path, {
+        String? email,
+        String? token,
+        String? ewallet,
+        String? id,
+      }
       );
 
   Future<Response> handlePostRequest(
@@ -49,4 +53,11 @@ abstract class HttpService {
         required String country,
         required bool agree,
       });
+
+  Future<Response> depositFund(
+      String path, {
+        required String amount,
+        required String currency,
+        required int code,
+        required String token,required String email}) ;
 }

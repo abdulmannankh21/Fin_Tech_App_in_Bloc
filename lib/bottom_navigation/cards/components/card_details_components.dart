@@ -124,19 +124,79 @@ class _CardDetailsComponentsState extends State<CardDetailsComponents> {
         }
         if (state is CarddetailsSuccesstate) {
           if(state.model.code == 200){
-          String url = state.model.data!.qrimage!.url!.toString() + state.model.data!.qrimage!.data!.hashCode.toString();
+            String data = '{"card_hash":"' + state.model.data!.qrimage!.hashCode!.toString()  + '","cvv":"' + state.model.data!.cvv.toString() + '","expiration":"' + state.model.data!.expiration.toString() + '","name_on_card":"' + state.model.data!.name_on_cad.toString() + '"}';
+            print(data);
+          String url = state.model.data!.qrimage!.url!.toString() + data;
           print(url);
 
           return Column(
             children: [
               Container(
-                height: _size.height*0.38,
-                child: WebView(
-                  key: _key,
-                  javascriptMode: JavascriptMode.unrestricted,
-                  initialUrl: url,
-                  backgroundColor: const Color(0x00000000),
+                height: _size.height*0.4,
+                width: _size.width,
+
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(state.model.data!.card_design!),
+                    fit: BoxFit.cover,
+                  ),
                 ),
+                child:Column(
+                  children: [
+
+
+                    SizedBox(height: _size.height * 0.16,),
+                    Text(state.model.data!.card_pan!,style: TextStyle(
+                        fontSize: 36,color: Colors.white
+                    ),),
+                    SizedBox(height: _size.height * 0.04,),
+                    Container(
+                      margin: EdgeInsets.only(left: 16,right: 100),
+                      child:Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Cardholder",style:TextStyle(
+                    fontSize: 16,color: Colors.white
+                    ),),
+                        Text("Exp",style:TextStyle(
+                            fontSize: 16,color: Colors.white
+                        ),),
+                      ],
+                    )),
+                    SizedBox(height: _size.height * 0.005,),
+                    Container(
+                        margin: EdgeInsets.only(left: 16),
+                        child:Row(
+
+                          children: [
+                            Text(state.model.data!.name_on_cad!.toUpperCase(),style:TextStyle(
+                                fontSize: 20,color: Colors.white
+                            ),),
+                            SizedBox(width: _size.width * 0.28,),
+                            Text("VALID",style:TextStyle(
+                                fontSize: 12,color: Colors.white
+                            ),),
+                            Icon(Icons.navigate_next,color: Colors.white,),
+                            Text(state.model.data!.expiration!,style:TextStyle(
+                                fontSize: 16,color: Colors.white
+                            ),),
+                          ],
+                        )),
+                    Container(
+                        margin: EdgeInsets.only(left: 16,right: 96),
+                        child:Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(""),
+                            Text("THRU",style:TextStyle(
+                                fontSize: 12,color: Colors.white
+                            ),),
+                          ],
+                        )),
+                  ]
+
+
+                )
               ),
               SizedBox(height: _size.height * 0.02),
               Container(
@@ -152,8 +212,19 @@ class _CardDetailsComponentsState extends State<CardDetailsComponents> {
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Column(
                     children: [
-
-
+                      ListTile(
+                        leading: const Icon(
+                          Icons.qr_code,
+                          color: ConstantColors.primaryCyan,
+                        ),
+                        title:  Text("View QR"),
+                        trailing: Icon(Icons.navigate_next,color: Colors.blueAccent,),
+                        onTap: (){
+                          showDialog(context: context, builder: (BuildContext context) {
+                            return WebView(initialUrl: url,);
+                          });
+                        }
+                      ),
                       if (state.model.data!.is_active! == "ACT")
                         BlocConsumer<BlockcardCubit, BlockcardState>(
                           listener: (context, state) {

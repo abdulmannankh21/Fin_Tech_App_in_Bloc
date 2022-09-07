@@ -230,6 +230,7 @@ class _$UserCardDetailsTearOff {
       String? card_pan,
       String? expiration,
       String? cvv,
+      String? card_design,
       String? is_active,
       String? currency,
       String? name_on_cad,
@@ -238,6 +239,7 @@ class _$UserCardDetailsTearOff {
       card_pan,
       expiration,
       cvv,
+      card_design,
       is_active,
       currency,
       name_on_cad,
@@ -258,6 +260,7 @@ mixin _$UserCardDetails {
   String? get card_pan => throw _privateConstructorUsedError;
   String? get expiration => throw _privateConstructorUsedError;
   String? get cvv => throw _privateConstructorUsedError;
+  String? get card_design => throw _privateConstructorUsedError;
   String? get is_active => throw _privateConstructorUsedError;
   String? get currency => throw _privateConstructorUsedError;
   String? get name_on_cad => throw _privateConstructorUsedError;
@@ -278,6 +281,7 @@ abstract class $UserCardDetailsCopyWith<$Res> {
       {String? card_pan,
       String? expiration,
       String? cvv,
+      String? card_design,
       String? is_active,
       String? currency,
       String? name_on_cad,
@@ -300,6 +304,7 @@ class _$UserCardDetailsCopyWithImpl<$Res>
     Object? card_pan = freezed,
     Object? expiration = freezed,
     Object? cvv = freezed,
+    Object? card_design = freezed,
     Object? is_active = freezed,
     Object? currency = freezed,
     Object? name_on_cad = freezed,
@@ -317,6 +322,10 @@ class _$UserCardDetailsCopyWithImpl<$Res>
       cvv: cvv == freezed
           ? _value.cvv
           : cvv // ignore: cast_nullable_to_non_nullable
+              as String?,
+      card_design: card_design == freezed
+          ? _value.card_design
+          : card_design // ignore: cast_nullable_to_non_nullable
               as String?,
       is_active: is_active == freezed
           ? _value.is_active
@@ -360,6 +369,7 @@ abstract class _$UserCardDetailsCopyWith<$Res>
       {String? card_pan,
       String? expiration,
       String? cvv,
+      String? card_design,
       String? is_active,
       String? currency,
       String? name_on_cad,
@@ -385,6 +395,7 @@ class __$UserCardDetailsCopyWithImpl<$Res>
     Object? card_pan = freezed,
     Object? expiration = freezed,
     Object? cvv = freezed,
+    Object? card_design = freezed,
     Object? is_active = freezed,
     Object? currency = freezed,
     Object? name_on_cad = freezed,
@@ -402,6 +413,10 @@ class __$UserCardDetailsCopyWithImpl<$Res>
       cvv == freezed
           ? _value.cvv
           : cvv // ignore: cast_nullable_to_non_nullable
+              as String?,
+      card_design == freezed
+          ? _value.card_design
+          : card_design // ignore: cast_nullable_to_non_nullable
               as String?,
       is_active == freezed
           ? _value.is_active
@@ -426,8 +441,15 @@ class __$UserCardDetailsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_UserCardDetails implements _UserCardDetails {
-  const _$_UserCardDetails(this.card_pan, this.expiration, this.cvv,
-      this.is_active, this.currency, this.name_on_cad, this.qrimage);
+  const _$_UserCardDetails(
+      this.card_pan,
+      this.expiration,
+      this.cvv,
+      this.card_design,
+      this.is_active,
+      this.currency,
+      this.name_on_cad,
+      this.qrimage);
 
   factory _$_UserCardDetails.fromJson(Map<String, dynamic> json) =>
       _$$_UserCardDetailsFromJson(json);
@@ -439,6 +461,8 @@ class _$_UserCardDetails implements _UserCardDetails {
   @override
   final String? cvv;
   @override
+  final String? card_design;
+  @override
   final String? is_active;
   @override
   final String? currency;
@@ -449,7 +473,7 @@ class _$_UserCardDetails implements _UserCardDetails {
 
   @override
   String toString() {
-    return 'UserCardDetails(card_pan: $card_pan, expiration: $expiration, cvv: $cvv, is_active: $is_active, currency: $currency, name_on_cad: $name_on_cad, qrimage: $qrimage)';
+    return 'UserCardDetails(card_pan: $card_pan, expiration: $expiration, cvv: $cvv, card_design: $card_design, is_active: $is_active, currency: $currency, name_on_cad: $name_on_cad, qrimage: $qrimage)';
   }
 
   @override
@@ -464,6 +488,9 @@ class _$_UserCardDetails implements _UserCardDetails {
                     .equals(other.expiration, expiration)) &&
             (identical(other.cvv, cvv) ||
                 const DeepCollectionEquality().equals(other.cvv, cvv)) &&
+            (identical(other.card_design, card_design) ||
+                const DeepCollectionEquality()
+                    .equals(other.card_design, card_design)) &&
             (identical(other.is_active, is_active) ||
                 const DeepCollectionEquality()
                     .equals(other.is_active, is_active)) &&
@@ -483,6 +510,7 @@ class _$_UserCardDetails implements _UserCardDetails {
       const DeepCollectionEquality().hash(card_pan) ^
       const DeepCollectionEquality().hash(expiration) ^
       const DeepCollectionEquality().hash(cvv) ^
+      const DeepCollectionEquality().hash(card_design) ^
       const DeepCollectionEquality().hash(is_active) ^
       const DeepCollectionEquality().hash(currency) ^
       const DeepCollectionEquality().hash(name_on_cad) ^
@@ -504,6 +532,7 @@ abstract class _UserCardDetails implements UserCardDetails {
       String? card_pan,
       String? expiration,
       String? cvv,
+      String? card_design,
       String? is_active,
       String? currency,
       String? name_on_cad,
@@ -518,6 +547,8 @@ abstract class _UserCardDetails implements UserCardDetails {
   String? get expiration => throw _privateConstructorUsedError;
   @override
   String? get cvv => throw _privateConstructorUsedError;
+  @override
+  String? get card_design => throw _privateConstructorUsedError;
   @override
   String? get is_active => throw _privateConstructorUsedError;
   @override

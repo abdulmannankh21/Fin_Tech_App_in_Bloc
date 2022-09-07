@@ -23,6 +23,7 @@ abstract class UserCardDetails with _$UserCardDetails{
       String? card_pan,
       String? expiration,
       String? cvv,
+      String? card_design,
       String? is_active,
       String? currency,
       String? name_on_cad,

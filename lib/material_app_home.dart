@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/bottom_navigation/cards/block_card/cubit/block_card_cubit.dart';
 import 'package:flutter_app/bottom_navigation/cards/create_addon_cards/cubit/issue_card_cubit.dart';
 import 'package:flutter_app/bottom_navigation/cards/load_funds_on_card/cubit/load_funds_on_card_cubit.dart';
+import 'package:flutter_app/bottom_navigation/deposit/cubit/deposit_cubit.dart';
 import 'package:flutter_app/bottom_navigation/wallets/add_fund/cubit/add_fund_wallet_cubit.dart';
 import 'package:flutter_app/bottom_navigation/wallets/add_on_user/cubit/add_on_user_cubit.dart';
 import 'package:flutter_app/bottom_navigation/wallets/repository/wallet_screen_repo.dart';
@@ -52,6 +53,7 @@ import 'package:flutter_app/bottom_navigation/cards/addon_cards/repository/addon
 import 'core/app_configs/routes_generator.dart';
 import 'core/app_configs/service_locator.dart';
 import 'src/splash/splash_screen.dart';
+import 'package:flutter_app/bottom_navigation/deposit/repo/deposit_repo.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart' as loc;
 class MaterialAppHome extends StatefulWidget {
   static setCustomeLanguage(BuildContext context, String languageCode) {
@@ -128,6 +130,11 @@ class _MaterialAppHomeState extends State<MaterialAppHome> {
           BlocProvider<IssuecardCubit>(
             create: (context) => IssuecardCubit(
               repository: GetIt.I<IssueCardRepository>(),
+            ),
+          ),
+          BlocProvider<DepositCubit>(
+            create: (context) => DepositCubit(
+              repository: GetIt.I<DepositRepository>(),
             ),
           ),
           BlocProvider<WalletFundCubit>(

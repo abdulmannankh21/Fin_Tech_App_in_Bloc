@@ -134,10 +134,14 @@ class DioHttpService implements HttpService {
 
   @override
   Future<Response> handleGetRequest(
-    String path,
-    RequestType? type,
+    String path, {
+        String? email,
+        String? token,
+        String? ewallet,
+        String? id,
+      }
   ) async {
-    final _option = await getOption(type);
+    final _option = await Options(headers: {'api-key': Keys.apiKey,'token' : token,'email':email,'ewalletid':ewallet,'user_id':id});
     final _response = await _dio.get(
       path,
       options: _option,
@@ -200,6 +204,26 @@ class DioHttpService implements HttpService {
     });
     final _response =
     await _dio.post(path, data: formData, options: option);
+    return _response;
+  }
+
+  Future<Response> depositFund(
+      String path, {
+        required String amount,
+        required String currency,
+        required int code,
+        required String token,required String email}) async {
+
+    final option = await Options(headers: {'token' : token,'email':email});
+    FormData formData = FormData.fromMap({
+      "amount": amount,
+      "currency":currency,
+      "method_code":code
+
+    });
+    final _response =
+    await _dio.post(path, data: formData, options: option);
+    print(_response);
     return _response;
   }
 
