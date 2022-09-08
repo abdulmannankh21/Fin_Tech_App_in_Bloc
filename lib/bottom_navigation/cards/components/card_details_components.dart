@@ -139,7 +139,7 @@ class _CardDetailsComponentsState extends State<CardDetailsComponents> {
                       Row(
                         children: [
                           SizedBox(
-                            height: _size.height * 0.28,
+                            height: _size.height * 0.23,
                             width: _size.width * 0.04,
                           ),
                           Image(
@@ -148,6 +148,10 @@ class _CardDetailsComponentsState extends State<CardDetailsComponents> {
                             height: 100,
                             width: 100,
                           ),
+                        ],
+                      ),
+                      Row(
+                        children: [
                           SizedBox(
                             width: _size.width * 0.04,
                           ),
