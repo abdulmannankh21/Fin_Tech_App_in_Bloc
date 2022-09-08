@@ -136,32 +136,30 @@ class _CardDetailsComponentsState extends State<CardDetailsComponents> {
                       ),
                     ),
                     child: Column(children: [
-                      SizedBox(
-                        height: _size.height * 0.04,
-                      ),
-                      Image(
-                        image: NetworkImage(url),
-                        height: 75,
-                        width: 75,
-                      ),
-                      SizedBox(
-                        height: _size.height * 0.04,
-                      ),
-                      Text(
-                        state.model.data!.card_pan!,
-                        style: TextStyle(fontSize: 24, color: Colors.white),
-                      ),
-                      SizedBox(
-                        height: _size.height * 0.04,
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(left: 16, right: 100),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [],
-                          )),
-                      SizedBox(
-                        height: _size.height * 0.005,
+                      Row(
+                        children: [
+                          SizedBox(
+                            height: _size.height * 0.28,
+                            width: _size.width * 0.04,
+                          ),
+                          Image(
+                            alignment: Alignment.centerLeft,
+                            image: NetworkImage(url),
+                            height: 100,
+                            width: 100,
+                          ),
+                          SizedBox(
+                            width: _size.width * 0.04,
+                          ),
+                          Text(
+                            state.model.data!.card_pan!,
+                            style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.left,
+                          ),
+                        ],
                       ),
                       Container(
                           margin: EdgeInsets.only(left: 16),
