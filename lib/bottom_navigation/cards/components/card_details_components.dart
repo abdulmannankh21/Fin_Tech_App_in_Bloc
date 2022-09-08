@@ -128,7 +128,7 @@ class _CardDetailsComponentsState extends State<CardDetailsComponents> {
               children: [
                 Container(
                     height: _size.height * 0.4,
-                    width: _size.width,
+                    width: _size.width * 0.98,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage(state.model.data!.card_design!),
@@ -139,7 +139,7 @@ class _CardDetailsComponentsState extends State<CardDetailsComponents> {
                       Row(
                         children: [
                           SizedBox(
-                            height: _size.height * 0.23,
+                            height: _size.height * 0.24,
                             width: _size.width * 0.04,
                           ),
                           Image(
