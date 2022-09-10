@@ -61,12 +61,10 @@ class _SplashScreenState extends State<SplashScreen> {
   checkUserStatus() async {
     final bool _isFirstTimeOpen =
         await MySharedPreferences().getBooleanValue(Constant.firstTimeOpen);
-debugPrint(_isFirstTimeOpen.toString());
     if (!_isFirstTimeOpen) {
       Navigator.pushReplacementNamed(context, ScreenNames.startPageScreen);
     } else {
      var  isAuthenticate= await _authenticateWithBiometrics();
-     debugPrint(isAuthenticate.toString());
     if(isAuthenticate){
       var isSuccess = await login();
       if(isSuccess){
@@ -119,7 +117,7 @@ debugPrint(_isFirstTimeOpen.toString());
       debugPrint("authenticating.............");
       authenticated = await auth.authenticate(
         localizedReason:
-        'Scan your fingerprint (or face or whatever) to authenticate',
+        'Scan your fingerprint to authenticate',
         options: const AuthenticationOptions(
           stickyAuth: true,
           biometricOnly: true,

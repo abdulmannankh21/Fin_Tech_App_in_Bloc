@@ -11,6 +11,7 @@ import 'package:flutter_app/src/home/shimmer_effect/transaction_builder.dart';
 import 'package:flutter_app/src/home/transaction/cubit/home_transaction_cubit.dart';
 import 'package:flutter_app/src/widget/xenio_search.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:shimmer/shimmer.dart';
@@ -270,7 +271,7 @@ class _HomeTransactionScreenState extends State<HomeTransactionScreen> {
                                         },
                                       );
                                     },
-                                    leadingText: _model!.payment_status![0],
+                                    leading: (double.parse(_model!.amount!) > 0) ? Icon(Icons.arrow_drop_down_outlined,color: Colors.green,) : Icon(Icons.arrow_drop_up_outlined,color: Colors.red),
                                     title: _model.description!,
                                     description: _model.created_at!,
                                     amount:

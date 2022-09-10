@@ -182,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         Row(
                                           children: [
                                             Text(
-                                              "${state.model.wallet_balance!.currency!} ",
+                                              "${state.model.wallet_balance!.balance!} ",
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.start,
                                               maxLines: 1,
@@ -192,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 fontWeight: FontWeight.w600,
                                                 color: _themeData
                                                     .colorScheme.onSurface,
-                                                fontSize: 14,
+                                                fontSize:30,
                                               ),
                                             ),
                                             Container(
@@ -200,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               padding: const EdgeInsets.only(
                                                   top: 14),
                                               child: Text(
-                                                "${state.model.wallet_balance!.balance}",
+                                                "${state.model.wallet_balance!.currency}",
                                                 overflow: TextOverflow.ellipsis,
                                                 maxLines: 1,
                                                 style: _themeData
@@ -211,7 +211,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                         color: _themeData
                                                             .colorScheme
                                                             .onSurface,
-                                                        fontSize: 30),
+                                                        fontSize: 14),
                                               ),
                                             ),
                                           ],
@@ -450,10 +450,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           },
                                         );
                                       },
-                                      leadingText: state
-                                          .model
-                                          .transactions![index]
-                                          .payment_status![0],
+                                leading: (double.parse(state.model.transactions![index].amount!) > 0) ? Icon(Icons.arrow_drop_down_outlined,color: Colors.green,) : Icon(Icons.arrow_drop_up_outlined,color: Colors.red),
                                       title: state.model.transactions![index]
                                           .description!,
                                       description: state.model

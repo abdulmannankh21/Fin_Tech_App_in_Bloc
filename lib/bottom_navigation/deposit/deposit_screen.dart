@@ -167,7 +167,11 @@ class _DepositState extends State<DepositScreen> {
 
                     child: GestureDetector(
                         onTap: () {
-                          if(_amountController.text.isEmpty){
+                          if(double.parse(_amountController.text) < double.parse(method!.min_amount!)){
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Amount should be greater than or equal to the minimum amount")));
+                          } else if(double.parse(_amountController.text) > double.parse(method!.max_amount!)){
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Amount should be less than or equal to the maximum amount")));
+                          }else if(_amountController.text.isEmpty){
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Please Enter the Amount")));
                           }else if(method == null){
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Please select the method")));

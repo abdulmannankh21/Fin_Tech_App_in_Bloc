@@ -4,7 +4,7 @@ import 'package:flutter_app/core/utils/commen_extensions.dart';
 
 
 class TransactionBuilderNew extends StatelessWidget {
-  final String leadingText;
+  final String? leadingText;
   final Widget? leading;
   final String title;
   final String description;
@@ -18,7 +18,7 @@ class TransactionBuilderNew extends StatelessWidget {
 
   const TransactionBuilderNew({
     Key? key,
-    required this.leadingText,
+    this.leadingText,
     required this.title,
     required this.description,
     required this.amount,
@@ -49,7 +49,7 @@ class TransactionBuilderNew extends StatelessWidget {
                     backgroundColor: _theme.cardColor,
                     child: leading == null
                         ? Text(
-                      leadingText.capitalize(),
+                      leadingText!.capitalize(),
                       style: const TextStyle(
                         color: ConstantColors.welcome_sign_up_text_color,
                       ),
