@@ -53,8 +53,8 @@ class _DepositWebviewState extends State<DepositWebview> {
               },
               onPageFinished: (String url) {
                 print('Page finished loading: $url');
-                if(url.contains("kyccomplete")){
-                  Navigator.pushReplacementNamed(context, ScreenNames.login);
+                if(url.contains("login")){
+                  Navigator.pushReplacementNamed(context,ScreenNames.bottomNavigationHome );
                 }
               },
               gestureNavigationEnabled: true,
