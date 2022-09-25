@@ -1,3 +1,6 @@
+import 'package:flutter_app/bottom_navigation/airtime/get_operator/repository/recharge_repo.dart';
+import 'package:flutter_app/bottom_navigation/airtime/process_recharge/repository/process_repo.dart';
+import 'package:flutter_app/bottom_navigation/airtime/repository/airtime_repository.dart';
 import 'package:flutter_app/bottom_navigation/cards/addon_cards/repository/addon_card_repository.dart';
 import 'package:flutter_app/bottom_navigation/cards/block_card/repository/block_card_repository.dart';
 import 'package:flutter_app/bottom_navigation/cards/cards_details/repository/card_details_repository.dart';
@@ -66,6 +69,18 @@ void serviceLoactor() {
 
   getIt.registerFactory<AddOnUserRepository>(
         () => AddOnUserRepository(httpService: GetIt.I.get<HttpService>()),
+  );
+
+  getIt.registerFactory<AirtimeProcessRepository>(
+        () => AirtimeProcessRepository(httpService: GetIt.I.get<HttpService>()),
+  );
+
+  getIt.registerFactory<AirtimeRepository>(
+        () => AirtimeRepository(httpService: GetIt.I.get<HttpService>()),
+  );
+
+  getIt.registerFactory<AirtimeRechargeRepository>(
+        () => AirtimeRechargeRepository(httpService: GetIt.I.get<HttpService>()),
   );
 
 

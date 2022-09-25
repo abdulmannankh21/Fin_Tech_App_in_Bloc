@@ -250,9 +250,14 @@ class _CardDetailsComponentsState extends State<CardDetailsComponents> {
                               showDialog(
                                   context: context,
                                   builder: (BuildContext context) {
-                                    return WebView(
+                                    return Container(
+                                      width: _size.width,
+                                      height: _size.height/3,
+                                      margin: EdgeInsets.all(25),
+                                      child:WebView(
+                                        backgroundColor: Colors.white,
                                       initialUrl: url,
-                                    );
+                                    ));
                                   });
                             }),
                         if (state.model.data!.is_active! == "ACT")

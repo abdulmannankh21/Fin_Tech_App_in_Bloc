@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/bottom_navigation/airtime/cubit/airtime_cubit.dart';
+import 'package:flutter_app/bottom_navigation/airtime/get_operator/cubit/airtime_recharge_cubit.dart';
+import 'package:flutter_app/bottom_navigation/airtime/process_recharge/cubit/process_recharge_cubit.dart';
 import 'package:flutter_app/bottom_navigation/cards/block_card/cubit/block_card_cubit.dart';
 import 'package:flutter_app/bottom_navigation/cards/create_addon_cards/cubit/issue_card_cubit.dart';
 import 'package:flutter_app/bottom_navigation/cards/load_funds_on_card/cubit/load_funds_on_card_cubit.dart';
@@ -29,6 +32,9 @@ import 'package:flutter_app/user/registeration/transaction_webview/cubit/transac
 import 'package:flutter_app/user/registeration/verify_email/cubit/verify_email_cubit.dart';
 import 'package:flutter_app/bottom_navigation/cards/transaction/repository/card_transaction_repository.dart';
 import 'package:flutter_app/user/registeration/verify_mobile/cubit/verify_mobile_cubit.dart';
+import 'package:flutter_app/bottom_navigation/airtime/get_operator/repository/recharge_repo.dart';
+import 'package:flutter_app/bottom_navigation/airtime/process_recharge/repository/process_repo.dart';
+import 'package:flutter_app/bottom_navigation/airtime/repository/airtime_repository.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_app/bottom_navigation/wallets/add_fund/repository/add_fund_wallet_repository.dart';
@@ -130,6 +136,21 @@ class _MaterialAppHomeState extends State<MaterialAppHome> {
           BlocProvider<IssuecardCubit>(
             create: (context) => IssuecardCubit(
               repository: GetIt.I<IssueCardRepository>(),
+            ),
+          ),
+          BlocProvider<ProcessRechargeCubit>(
+            create: (context) => ProcessRechargeCubit(
+              repository: GetIt.I<AirtimeProcessRepository>(),
+            ),
+          ),
+          BlocProvider<AirtimeCubit>(
+            create: (context) => AirtimeCubit(
+              repository: GetIt.I<AirtimeRepository>(),
+            ),
+          ),
+          BlocProvider<AirtimeRechargeCubit>(
+            create: (context) => AirtimeRechargeCubit(
+              repository: GetIt.I<AirtimeRechargeRepository>(),
             ),
           ),
           BlocProvider<DepositCubit>(

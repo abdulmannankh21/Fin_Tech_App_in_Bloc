@@ -24,7 +24,7 @@ abstract class HttpService {
       String path, {
         Map<String, dynamic>? data,
         String email,
-        String token, String ewallet,String id
+        String token, String ewallet,String id,String country,String operatorid
       }
       );
 

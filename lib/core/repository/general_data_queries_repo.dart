@@ -10,7 +10,10 @@ import 'package:flutter_app/core/mode/get_state_codes_model.dart';
 import 'package:flutter_app/core/services/http_service.dart';
 import 'package:flutter_app/core/services/response_model/request_type.dart';
 import 'package:http/http.dart';
+import '../../bottom_navigation/airtime/model/countries_model/airtime_countries_model.dart';
+import '../../src/constant/constant.dart';
 import '../services/response_model/response_model.dart';
+import '../utils/shared_preferences.dart';
 
 class GeneralDataQueriesRepo {
   final HttpService httpService;
@@ -118,17 +121,17 @@ class GeneralDataQueriesRepo {
     }
   }
 
-  Future<List<GetCountriesModel>> getCountries() async {
-    final path = '${EndPointURL.baseURL}api/getcountries';
+  Future<AirtimeCountries> getAirtimeCountries() async {
+    final path = '${EndPointURL.baseURL}/api/getcountries';
     try {
+      final email = await MySharedPreferences().getStringValue(Constant.email);
+      final token = await MySharedPreferences().getStringValue(
+          Constant.logintoken);
       final response =
-          await httpService.handlePostRequest(path, isTokenCall: false);
+      await httpService.handleGetRequest(path, email: email,token: token);
       if (response.statusCode! >= 200 && response.statusCode! <= 300) {
         final _result = json.decode(response.data);
-        final _countries = (_result as List)
-            .map((data) => GetCountriesModel.fromJson(data))
-            .toList();
-        return _countries;
+        return AirtimeCountries.fromJson(_result);
       } else {
         throw HtpCustomError(
           code: response.statusCode,

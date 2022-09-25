@@ -108,6 +108,8 @@ class DioHttpService implements HttpService {
         String? token,
         String? ewallet,
         String? id,
+        String? country,
+        String? operatorid
 
       }) async {
       print(path);
@@ -115,7 +117,7 @@ class DioHttpService implements HttpService {
       print(token);
       final _option;
       if(token != null) {
-        _option = Options(headers: {'api-key': Keys.apiKey,'token' : token,'email':email,'ewalletid':ewallet,'user_id':id});
+        _option = Options(headers: {'api-key': Keys.apiKey,'country':country,'operatorid':operatorid,'token' : token,'email':email,'ewalletid':ewallet,'user_id':id});
       } else{
         _option = Options(headers: {'api-key': Keys.apiKey});
       }

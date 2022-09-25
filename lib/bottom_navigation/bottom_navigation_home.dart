@@ -2,6 +2,7 @@
 import 'package:barcode_scan2/barcode_scan2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/bottom_navigation/airtime/pages/airtime_select_country.dart';
 
 
 import 'package:flutter_app/bottom_navigation/cards/cards_details/cubit/card_details_cubit.dart';
@@ -103,8 +104,8 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
       child: const CardsScreen(),
     ),
      //Container(),
-    // const HomeScreen(),
-    // const WalletScreen(),
+    //const AirtimeSelectCountry(),
+    const AirtimeSelectCountry(),
 
   ];
 
@@ -253,13 +254,13 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
       // getNavigatoinBarItem(
       //   iconName: ConstanceData.bank,
       //   iconLabel: ConstanceData.bankTitle,
-      //   isSelected: _selectedIndex == 3,
+      //   isSelected: _selectedIndex == 2,
       // ),
-      // getNavigatoinBarItem(
-      //   iconName: ConstanceData.crypto,
-      //   iconLabel: ConstanceData.cryptoTitle,
-      //   isSelected: _selectedIndex == 4,
-      // ),
+      getNavigatoinBarItem(
+        iconName: ConstanceData.crypto,
+        iconLabel: ConstanceData.cryptoTitle,
+        isSelected: _selectedIndex == 2,
+      ),
     ];
   }
 
