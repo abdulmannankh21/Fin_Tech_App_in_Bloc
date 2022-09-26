@@ -36,7 +36,7 @@ class _AirtimeSelectCountryState extends State<AirtimeSelectCountry> {
     }
     final countriesModel =
         await GetIt.I<GeneralDataQueriesRepo>().getAirtimeCountries();
-    countries = countriesModel!.data;
+    countries = countriesModel.data;
     setState(() {});
   }
 
