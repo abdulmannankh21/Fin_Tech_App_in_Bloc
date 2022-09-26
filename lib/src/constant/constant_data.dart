@@ -8,7 +8,7 @@ class ConstanceData {
 
   static const baseImageUrl = 'assets/';
 
-  static const appShareLink = ' https://africa.xenio.in';
+  static const appShareLink = ' https://gammer.xenio.in';
 
   // navigation icons & labels
   static const String dashboard = "assets/images/dashboard.png";
@@ -74,7 +74,6 @@ class ConstanceData {
 
   //App Name
   static const appName = "Xenio";
-
 }
 
 AllTextData allTextData = AllTextData(allText: []);

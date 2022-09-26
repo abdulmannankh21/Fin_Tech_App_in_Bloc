@@ -215,8 +215,8 @@ class _RegistrationState extends State<Registration> {
                                   onChanged: (CountriesCode? newValue) {
                                     setState(() {
                                       _selectedCountryDialCode = newValue!.dialCode!;
-                                      _selectedCountry = newValue!.name!;
-                                      _selectedCountryCode = newValue!.code!;
+                                      _selectedCountry = newValue.name!;
+                                      _selectedCountryCode = newValue.code!;
                                       print(_selectedCountryCode + _selectedCountry + _selectedCountryDialCode);
                                     });
                                   },

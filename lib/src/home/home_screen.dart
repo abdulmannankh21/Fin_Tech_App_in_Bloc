@@ -192,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 fontWeight: FontWeight.w600,
                                                 color: _themeData
                                                     .colorScheme.onSurface,
-                                                fontSize:30,
+                                                fontSize: 30,
                                               ),
                                             ),
                                             Container(
@@ -286,7 +286,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
                                             const Spacer(),
                                             AutoSizeText(
-                                              """${_model?.code} ${_model?.balance ?? ''}""",
+                                              """${_model.code} ${_model.balance ?? ''}""",
                                               maxFontSize: 16.0,
                                               minFontSize: 10.0,
                                               overflow: TextOverflow.ellipsis,
@@ -399,7 +399,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                             width: _size.width *
                                                                 0.3,
                                                             child: Text(
-                                                              """${_model!.currency?.toUpperCase()} ${_model.amount}""",
+                                                              """${_model.currency?.toUpperCase()} ${_model.amount}""",
                                                               style:
                                                                   const TextStyle(
                                                                 color: ConstantColors
@@ -450,7 +450,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                           },
                                         );
                                       },
-                                leading: (double.parse(state.model.transactions![index].amount!) > 0) ? Icon(Icons.arrow_drop_down_outlined,color: Colors.green,) : Icon(Icons.arrow_drop_up_outlined,color: Colors.red),
+                                      leading: (double.parse(state
+                                                  .model
+                                                  .transactions![index]
+                                                  .amount!) >
+                                              0)
+                                          ? Icon(
+                                              Icons.arrow_drop_down_outlined,
+                                              color: Colors.green,
+                                            )
+                                          : Icon(Icons.arrow_drop_up_outlined,
+                                              color: Colors.red),
                                       title: state.model.transactions![index]
                                           .description!,
                                       description: state.model
