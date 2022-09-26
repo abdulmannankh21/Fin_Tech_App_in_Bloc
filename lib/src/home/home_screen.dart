@@ -281,7 +281,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           children: [
                                             const Icon(
                                               FontAwesomeIcons.wallet,
-                                              color: ConstantColors.primaryCyan,
+                                              color: ConstantColors.appBar,
                                               size: 20.0,
                                             ),
                                             const Spacer(),

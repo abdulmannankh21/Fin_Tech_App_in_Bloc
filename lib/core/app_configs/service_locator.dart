@@ -9,6 +9,7 @@ import 'package:flutter_app/bottom_navigation/cards/load_funds_on_card/repositor
 import 'package:flutter_app/bottom_navigation/cards/unblock_card/repository/unblock_card_repository.dart';
 import 'package:flutter_app/bottom_navigation/cards/view_addon_cards/repository/view_addon_card_details_repository.dart';
 import 'package:flutter_app/bottom_navigation/deposit/repo/deposit_repo.dart';
+import 'package:flutter_app/bottom_navigation/mastercard/repo/mastercard_repo.dart';
 import 'package:flutter_app/bottom_navigation/wallets/add_fund/repository/add_fund_wallet_repository.dart';
 import 'package:flutter_app/bottom_navigation/wallets/add_on_user/repository/add_on_user_repo.dart';
 import 'package:flutter_app/bottom_navigation/wallets/repository/wallet_screen_repo.dart';
@@ -108,6 +109,10 @@ void serviceLoactor() {
   );
   getIt.registerFactory<VerifyMobileRepo>(
         () => VerifyMobileRepo(httpService: GetIt.I.get<HttpService>()),
+  );
+
+  getIt.registerFactory<MasterCardRepository>(
+        () => MasterCardRepository(httpService: GetIt.I.get<HttpService>()),
   );
   getIt.registerFactory<TransactionRepo>(
         () => TransactionRepo(httpService: GetIt.I.get<HttpService>()),

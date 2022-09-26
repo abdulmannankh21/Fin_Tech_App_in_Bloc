@@ -7,6 +7,7 @@ import 'package:flutter_app/bottom_navigation/airtime/pages/airtime_select_count
 
 import 'package:flutter_app/bottom_navigation/cards/cards_details/cubit/card_details_cubit.dart';
 import 'package:flutter_app/bottom_navigation/cards/cards_screen.dart';
+import 'package:flutter_app/bottom_navigation/mastercard/pages/mastercard_screen.dart';
 import 'package:flutter_app/bottom_navigation/wallets/subscription/plan_screen.dart';
 import 'package:flutter_app/bottom_navigation/wallets/wallet_screen.dart';
 import 'package:flutter_app/core/app_configs/screen_names.dart';
@@ -104,7 +105,7 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
       child: const CardsScreen(),
     ),
      //Container(),
-    //const AirtimeSelectCountry(),
+    const MasterCardScreen(),
     const AirtimeSelectCountry(),
 
   ];
@@ -251,15 +252,15 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
       //   isSelected: _selectedIndex == 1,
       //   isScanner: true,
       // ),
-      // getNavigatoinBarItem(
-      //   iconName: ConstanceData.bank,
-      //   iconLabel: ConstanceData.bankTitle,
-      //   isSelected: _selectedIndex == 2,
-      // ),
+      getNavigatoinBarItem(
+        iconName: ConstanceData.bank,
+        iconLabel: ConstanceData.bankTitle,
+        isSelected: _selectedIndex == 2,
+      ),
       getNavigatoinBarItem(
         iconName: ConstanceData.crypto,
         iconLabel: ConstanceData.cryptoTitle,
-        isSelected: _selectedIndex == 2,
+        isSelected: _selectedIndex == 3,
       ),
     ];
   }

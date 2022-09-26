@@ -6,6 +6,9 @@ import 'package:flutter_app/bottom_navigation/cards/block_card/cubit/block_card_
 import 'package:flutter_app/bottom_navigation/cards/create_addon_cards/cubit/issue_card_cubit.dart';
 import 'package:flutter_app/bottom_navigation/cards/load_funds_on_card/cubit/load_funds_on_card_cubit.dart';
 import 'package:flutter_app/bottom_navigation/deposit/cubit/deposit_cubit.dart';
+import 'package:flutter_app/bottom_navigation/mastercard/cubit/mastercard_cubit.dart';
+import 'package:flutter_app/bottom_navigation/mastercard/load_funds/cubit/mastercard_load_funds_cubit.dart';
+import 'package:flutter_app/bottom_navigation/mastercard/transactions/cubit/transaction_cubit.dart';
 import 'package:flutter_app/bottom_navigation/wallets/add_fund/cubit/add_fund_wallet_cubit.dart';
 import 'package:flutter_app/bottom_navigation/wallets/add_on_user/cubit/add_on_user_cubit.dart';
 import 'package:flutter_app/bottom_navigation/wallets/repository/wallet_screen_repo.dart';
@@ -56,6 +59,7 @@ import 'user/registeration/transaction_webview/repository/transaction_repo.dart'
 import 'package:flutter_app/bottom_navigation/cards/unblock_card/repository/unblock_card_repository.dart';
 import 'package:flutter_app/bottom_navigation/cards/block_card/repository/block_card_repository.dart';
 import 'package:flutter_app/bottom_navigation/cards/addon_cards/repository/addon_card_repository.dart';
+import 'package:flutter_app/bottom_navigation/mastercard/repo/mastercard_repo.dart';
 import 'core/app_configs/routes_generator.dart';
 import 'core/app_configs/service_locator.dart';
 import 'src/splash/splash_screen.dart';
@@ -121,6 +125,21 @@ class _MaterialAppHomeState extends State<MaterialAppHome> {
           BlocProvider<AddOnUserCubit>(
             create: (context) => AddOnUserCubit(
               repository: GetIt.I<AddOnUserRepository>(),
+            ),
+          ),
+          BlocProvider<MasterCardCubit>(
+            create: (context) => MasterCardCubit(
+              repository: GetIt.I<MasterCardRepository>(),
+            ),
+          ),
+          BlocProvider<MasterCardTransactionCubit>(
+            create: (context) => MasterCardTransactionCubit(
+              repository: GetIt.I<MasterCardRepository>(),
+            ),
+          ),
+          BlocProvider<MasterCardLoadFundCubit>(
+            create: (context) => MasterCardLoadFundCubit(
+              repository: GetIt.I<MasterCardRepository>(),
             ),
           ),
           BlocProvider<RegisterCubit>(

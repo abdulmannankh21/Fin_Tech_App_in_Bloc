@@ -572,8 +572,9 @@ class _ProfileState extends State<Profile> {
                                 width: 200,
                                 height: 40,
                                 child: ElevatedButton.icon(
-                                  onPressed: () {
-                                    context.read<LogoutCubit>().logOut();
+                                  onPressed: () async {
+                                    await MySharedPreferences().setBooleanValue(key: Constant.firstTimeOpen, value: false);
+                                    Navigator.pushNamedAndRemoveUntil(context, ScreenNames.login, (route) => false);
                                   },
                                   icon: ImageIcon(AssetImage('assets/logout.png'),color: ConstantColors.welcome_sign_up_text_color,size: 45),
                                   label: Text(

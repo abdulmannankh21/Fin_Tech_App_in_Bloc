@@ -131,17 +131,18 @@ class _AirtimeRechargeState extends State<AirtimeRecharge> {
                       margin: const EdgeInsets.only(top: 14, left: 14),
                       child:
                           const Text("Amount", style: TextStyle(fontSize: 24))),
-                  GridView.builder(
+                  ListView.builder(
                       shrinkWrap: true,
                       physics: ScrollPhysics(),
-                      gridDelegate:
-                          const SliverGridDelegateWithMaxCrossAxisExtent(
-                              maxCrossAxisExtent: 200, childAspectRatio: 1.4),
+
                       itemCount: model.data.response.fixedAmounts.length > 0
                           ? model.data.response.fixedAmounts.length
                           : model.data.response.suggestedAmounts.length,
                       itemBuilder: (BuildContext ctx, index) {
                         final fixedAmounts = model.data.response.fixedAmounts;
+                        final localFixedAmounts = model.data.response.localFixedAmounts;
+                        final fixedAmountsDescriptions = model.data.response.fixedAmountsDescriptions;
+                        print(fixedAmountsDescriptions);
                         final suggestedAmounts =
                             model.data.response.suggestedAmounts;
                         return GestureDetector(
@@ -152,22 +153,28 @@ class _AirtimeRechargeState extends State<AirtimeRecharge> {
                               });
                             },
                             child: Padding(
-                                padding: EdgeInsets.all(14),
+                                padding: EdgeInsets.all(2),
                                 child: Card(
                                     child: Container(
                                         padding: EdgeInsets.all(10),
                                         color: _selectedIndex == index
                                             ? Colors.orange
                                             : Colors.white,
-                                        alignment: Alignment.center,
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
+
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+
+                                          Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
                                           children: [
                                             Text(
                                               fixedAmounts.length > 0
                                                   ? fixedAmounts[index]
-                                                      .toString()
+                                                      .toString() +
+                                                  " " +
+                                                  model.data.response
+                                                      .senderCurrencySymbol!
                                                   : suggestedAmounts[index]
                                                           .toString() +
                                                       " " +
@@ -177,16 +184,25 @@ class _AirtimeRechargeState extends State<AirtimeRecharge> {
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.w700),
                                             ),
-                                            // Text(
-                                            //   localFixedAmounts[index]
-                                            //           .toString() +
-                                            //       " " +
-                                            //       model.data.response
-                                            //           .destinationCurrencySymbol!,
-                                            //   style: TextStyle(fontSize: 12),
-                                            // ),
+
+                                            fixedAmountsDescriptions.length > 0 ?
+                                            Text(
+                                              fixedAmountsDescriptions[fixedAmounts[index].toString()]
+                                                  .toString(),
+                                              style: TextStyle(fontSize: 12),
+                                            ):Container(),
                                           ],
-                                        )))));
+                                        ),
+                                            localFixedAmounts.length > 0 ?
+                                            Text(
+                                              localFixedAmounts[index]
+                                                  .toString() + " " +
+                                            model.data.response
+                                                .destinationCurrencySymbol!,
+                                              style: TextStyle(fontSize: 12),
+                                            ):Container(),
+
+                                    ],)))));
                       })
                 ],
               )))),
