@@ -36,6 +36,8 @@ class _RegistrationState extends State<Registration> {
 
   late BuildContext myContext;
   List<CountriesCode> list =[];
+  List<String> profiles = ["User","Merchant"];
+  String profile = '';
 
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -79,7 +81,7 @@ class _RegistrationState extends State<Registration> {
               state.errorMessage.showSnackBar(context);
             } else if (state is RegisterSuccess) {
               if(state.userModel.code >=400){
-                state.userModel.message.error![0].showSnackBar(context);
+                state.userModel.message.error!.showSnackBar(context);
               }else{
                 "Register Successful".showSnackBar(context);
                 Navigator.of(context).pushNamedAndRemoveUntil(
@@ -170,9 +172,43 @@ class _RegistrationState extends State<Registration> {
                               ),
 
                               SizedBox(height: _size.height * 0.03),
-                              NewTextField(
-                                controller: _profileController,
-                                labelText: "Profile",
+                              Container(
+                                width: MediaQuery.of(context).size.width,
+                                child: DropdownButtonFormField<String>(
+                                  isExpanded: true,
+                                  dropdownColor: Theme.of(context).scaffoldBackgroundColor,
+                                  decoration: const InputDecoration(
+                                    enabledBorder: UnderlineInputBorder(),
+
+
+                                  ),
+                                  items:
+                                  profiles.map<DropdownMenuItem<String>>((String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(
+                                        "${value}",
+                                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                                          color: _theme.colorScheme.onSecondary,
+                                        ),
+                                      ),
+                                    );
+                                  }).toList(),
+                                  onChanged: (String? newValue) {
+                                    setState(() {
+                                        profile = newValue!;
+                                        print(profile);
+                                    });
+                                  },
+                                  hint: Text(
+                                    "select profile type",
+                                    style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                                      color: _theme.colorScheme.onSecondary,
+                                    ),
+                                  ),
+                                  iconEnabledColor: _theme.colorScheme.onSecondary,
+                                  iconDisabledColor: _theme.colorScheme.onSecondary,
+                                ),
                               ),
 
                               SizedBox(height: _size.height * 0.03),
@@ -182,12 +218,11 @@ class _RegistrationState extends State<Registration> {
                               ),
 
                               SizedBox(height: _size.height * 0.03),
-
-
+                              profile == "Merchant" ?
                               NewTextField(
                                 controller: _companyController,
                                 labelText: "Company",
-                              ),
+                              ): Container(),
 
                               SizedBox(height: _size.height * 0.03),
                               Container(
@@ -240,8 +275,9 @@ class _RegistrationState extends State<Registration> {
                               SizedBox(height: _size.height * 0.03),
                               Row(
                                 children: [
-                                  Checkbox(value: false,checkColor: Colors.greenAccent,
-                                  activeColor: Colors.red,   onChanged: (value) {
+                                  Checkbox(
+                                      value: false,checkColor: Colors.greenAccent,
+                                  activeColor: Colors.blue,   onChanged: (value) {
                                     setState(() {
                                       agree = value!;
                                     });
@@ -284,7 +320,7 @@ class _RegistrationState extends State<Registration> {
                                             lastname: _lastNameController.text,
                                             number: _mobileNoController.text,
                                             username: _usernameController.text,
-                                            profile: _profileController.text,
+                                            profile: profile,
                                             company: _companyController.text,
                                             mobile_code: _selectedCountryDialCode,
                                             country_code: _selectedCountryCode,

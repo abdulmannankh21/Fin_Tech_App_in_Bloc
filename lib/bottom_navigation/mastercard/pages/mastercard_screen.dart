@@ -97,7 +97,7 @@ class _MasterCardScreenState extends State<MasterCardScreen> {
             return Column(
               children: [
                 Container(
-                    height: _size.height * 0.22,
+                    height: _size.height * 0.41,
 
 
                     child: WebView(
@@ -115,7 +115,7 @@ class _MasterCardScreenState extends State<MasterCardScreen> {
                 ),
                 SizedBox(height: _size.height * 0.02),
                 Container(
-                  height: _size.height * 0.48,
+                  height: _size.height * 0.19,
                   decoration: BoxDecoration(
                     color: _themeData.cardColor,
                     borderRadius: const BorderRadius.only(

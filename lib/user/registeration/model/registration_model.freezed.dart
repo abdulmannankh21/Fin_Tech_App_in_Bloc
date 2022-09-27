@@ -245,8 +245,8 @@ Message _$MessageFromJson(Map<String, dynamic> json) {
 class _$MessageTearOff {
   const _$MessageTearOff();
 
-  _Message call(@JsonKey(name: 'error') List<String>? error,
-      @JsonKey(name: 'success') List<String>? success) {
+  _Message call(@JsonKey(name: 'error') String? error,
+      @JsonKey(name: 'success') String? success) {
     return _Message(
       error,
       success,
@@ -264,9 +264,9 @@ const $Message = _$MessageTearOff();
 /// @nodoc
 mixin _$Message {
   @JsonKey(name: 'error')
-  List<String>? get error => throw _privateConstructorUsedError;
+  String? get error => throw _privateConstructorUsedError;
   @JsonKey(name: 'success')
-  List<String>? get success => throw _privateConstructorUsedError;
+  String? get success => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -278,8 +278,8 @@ abstract class $MessageCopyWith<$Res> {
   factory $MessageCopyWith(Message value, $Res Function(Message) then) =
       _$MessageCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'error') List<String>? error,
-      @JsonKey(name: 'success') List<String>? success});
+      {@JsonKey(name: 'error') String? error,
+      @JsonKey(name: 'success') String? success});
 }
 
 /// @nodoc
@@ -299,11 +299,11 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as String?,
       success: success == freezed
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as String?,
     ));
   }
 }
@@ -314,8 +314,8 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
       __$MessageCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'error') List<String>? error,
-      @JsonKey(name: 'success') List<String>? success});
+      {@JsonKey(name: 'error') String? error,
+      @JsonKey(name: 'success') String? success});
 }
 
 /// @nodoc
@@ -336,11 +336,11 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as String?,
       success == freezed
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as String?,
     ));
   }
 }
@@ -356,10 +356,10 @@ class _$_Message implements _Message {
 
   @override
   @JsonKey(name: 'error')
-  final List<String>? error;
+  final String? error;
   @override
   @JsonKey(name: 'success')
-  final List<String>? success;
+  final String? success;
 
   @override
   String toString() {
@@ -394,17 +394,17 @@ class _$_Message implements _Message {
 }
 
 abstract class _Message implements Message {
-  const factory _Message(@JsonKey(name: 'error') List<String>? error,
-      @JsonKey(name: 'success') List<String>? success) = _$_Message;
+  const factory _Message(@JsonKey(name: 'error') String? error,
+      @JsonKey(name: 'success') String? success) = _$_Message;
 
   factory _Message.fromJson(Map<String, dynamic> json) = _$_Message.fromJson;
 
   @override
   @JsonKey(name: 'error')
-  List<String>? get error => throw _privateConstructorUsedError;
+  String? get error => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'success')
-  List<String>? get success => throw _privateConstructorUsedError;
+  String? get success => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$MessageCopyWith<_Message> get copyWith =>

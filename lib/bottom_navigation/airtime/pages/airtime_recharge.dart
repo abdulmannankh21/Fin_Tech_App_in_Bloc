@@ -82,130 +82,139 @@ class _AirtimeRechargeState extends State<AirtimeRecharge> {
         child: Column(children: [
           Container(
               width: _size.width,
-              height: _size.height * 0.27,
+              height: _size.height * 0.3,
               child: Card(
                   child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                      margin: EdgeInsets.only(top: 14, left: 14),
-                      child:
-                          Text("Phone Number", style: TextStyle(fontSize: 24))),
-                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                          padding: EdgeInsets.only(left: 10),
-                          child: Image.network(model.data.response.logoUrls[0],
-                              height: 25, width: 25)),
                       Container(
-                          margin: const EdgeInsets.only(top: 14),
-                          padding: const EdgeInsets.all(10),
-                          width: MediaQuery.of(context).size.width * 0.7,
-                          child: XenioTextField(
-                            hintText: "Enter Phone Number",
-                            keyboardType: TextInputType.number,
-                            controller: _controller,
-                          )),
+                          margin: EdgeInsets.only(top: 14, left: 14),
+                          child:
+                          Text("Phone Number", style: TextStyle(fontSize: 24))),
+                      Container(
+                          margin: const EdgeInsets.only(left: 10,top: 10),
+                          child: const Text(
+                              "Enter phone number without country code",
+                              style: TextStyle(fontSize: 14))),
+
+                      Container(
+                          margin: const EdgeInsets.only(left: 10,top: 10),
+                          child: const Text("e.g. +39 31688991, Enter 31688991",
+                              style: TextStyle(fontSize: 14))),
+                      Row(
+                        children: [
+                          Padding(
+                              padding: EdgeInsets.only(left: 10),
+                              child: Image.network(model.data.response.logoUrls[0],
+                                  height: 25, width: 25)),
+                          Container(
+                              margin: const EdgeInsets.only(top: 14),
+                              padding: const EdgeInsets.all(10),
+                              width: MediaQuery.of(context).size.width * 0.7,
+                              child: XenioTextField(
+                                hintText: "Enter Phone Number",
+                                keyboardType: TextInputType.number,
+                                controller: _controller,
+                              )),
+                        ],
+                      ),
+
                     ],
-                  ),
-                  Container(
-                      margin: const EdgeInsets.only(left: 80),
-                      child: const Text(
-                          "Enter phone number without country code",
-                          style: TextStyle(fontSize: 14))),
-                  Container(
-                      margin: const EdgeInsets.only(left: 80, top: 10),
-                      child: const Text("e.g. +39 31688991, Enter 31688991",
-                          style: TextStyle(fontSize: 14))),
-                ],
-              ))),
+                  ))),
           const SizedBox(height: 20),
           Container(
-              height: _size.height * 0.4,
+              height: _size.height * 0.38,
               child: Card(
                   child: SingleChildScrollView(
                       child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                      margin: const EdgeInsets.only(top: 14, left: 14),
-                      child:
-                          const Text("Amount", style: TextStyle(fontSize: 24))),
-                  ListView.builder(
-                      shrinkWrap: true,
-                      physics: ScrollPhysics(),
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                              margin: const EdgeInsets.only(top: 14, left: 14),
+                              child:
+                              const Text("Amount", style: TextStyle(fontSize: 24))),
+                          ListView.builder(
+                              shrinkWrap: true,
+                              physics: ScrollPhysics(),
 
-                      itemCount: model.data.response.fixedAmounts.length > 0
-                          ? model.data.response.fixedAmounts.length
-                          : model.data.response.suggestedAmounts.length,
-                      itemBuilder: (BuildContext ctx, index) {
-                        final fixedAmounts = model.data.response.fixedAmounts;
-                        final localFixedAmounts = model.data.response.localFixedAmounts;
-                        final fixedAmountsDescriptions = model.data.response.fixedAmountsDescriptions;
-                        print(fixedAmountsDescriptions);
-                        final suggestedAmounts =
-                            model.data.response.suggestedAmounts;
-                        return GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                _selectedIndex = index;
-                                amount = fixedAmounts[index].toString();
-                              });
-                            },
-                            child: Padding(
-                                padding: EdgeInsets.all(2),
-                                child: Card(
-                                    child: Container(
-                                        padding: EdgeInsets.all(10),
-                                        color: _selectedIndex == index
-                                            ? Colors.orange
-                                            : Colors.white,
+                              itemCount: model.data.response.fixedAmounts.length > 0
+                                  ? model.data.response.fixedAmounts.length
+                                  : model.data.response.suggestedAmounts.length,
+                              itemBuilder: (BuildContext ctx, index) {
+                                final fixedAmounts = model.data.response.fixedAmounts;
+                                final localFixedAmounts = model.data.response.localFixedAmounts;
+                                final fixedAmountsDescriptions = model.data.response.fixedAmountsDescriptions;
+                                print(fixedAmountsDescriptions);
+                                final suggestedAmounts =
+                                    model.data.response.suggestedAmounts;
+                                return GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        _selectedIndex = index;
+                                        amount = fixedAmounts[index].toString();
+                                      });
+                                    },
+                                    child: Padding(
+                                        padding: EdgeInsets.all(1),
+                                        child: Card(
+                                            child: Container(
+                                                padding: EdgeInsets.all(10),
+                                                color: _selectedIndex == index
+                                                    ? Colors.orange
+                                                    : Colors.white,
 
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
+                                                child: Row(
+                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                  children: [
 
-                                          Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              fixedAmounts.length > 0
-                                                  ? fixedAmounts[index]
-                                                      .toString() +
-                                                  " " +
-                                                  model.data.response
-                                                      .senderCurrencySymbol!
-                                                  : suggestedAmounts[index]
-                                                          .toString() +
-                                                      " " +
-                                                      model.data.response
-                                                          .senderCurrencySymbol!,
-                                              style: const TextStyle(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w700),
-                                            ),
+                                                    Row(
+                                                  children: [
+                                                    Padding(
+                                                        padding: EdgeInsets.only(left: 0),
+                                                        child: Image.network(model.data.response.logoUrls[0],
+                                                            height: 25, width: 25)),
+                                                    SizedBox(width: 10,),
+                                                    fixedAmountsDescriptions.length > 0 ?
+                                                    Text(
+                                                      fixedAmountsDescriptions[fixedAmounts[index].toString()]
+                                                          .toString(),
+                                                      style: TextStyle(fontSize: 12),
+                                                    ):Container(),
+                                                  ],
+                                                    ),
 
-                                            fixedAmountsDescriptions.length > 0 ?
-                                            Text(
-                                              fixedAmountsDescriptions[fixedAmounts[index].toString()]
-                                                  .toString(),
-                                              style: TextStyle(fontSize: 12),
-                                            ):Container(),
-                                          ],
-                                        ),
-                                            localFixedAmounts.length > 0 ?
-                                            Text(
-                                              localFixedAmounts[index]
-                                                  .toString() + " " +
-                                            model.data.response
-                                                .destinationCurrencySymbol!,
-                                              style: TextStyle(fontSize: 12),
-                                            ):Container(),
+                                                    Column(
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                                      children: [
+                                                        Text(
+                                                          fixedAmounts.length > 0
+                                                              ? model.data.response
+                                                              .senderCurrencySymbol! + " "+fixedAmounts[index]
+                                                              .toString()
+                                                              : model.data.response
+                                                              .senderCurrencySymbol! + " "+suggestedAmounts[index]
+                                                              .toString(),
+                                                          style: const TextStyle(
+                                                              fontSize: 14,
+                                                              fontWeight: FontWeight.w700),
+                                                        ),
+                                                        localFixedAmounts.length > 0 ?
+                                                        Text(
+                                                          model.data.response
+                                                              .destinationCurrencySymbol! + " " + localFixedAmounts[index]
+                                                              .toString(),
+                                                          style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700),
+                                                        ):Container(),
 
-                                    ],)))));
-                      })
-                ],
-              )))),
+                                                      ],
+                                                    ),
+
+
+                                                  ],)))));
+                              })
+                        ],
+                      )))),
           SizedBox(height: 30),
           XenioPrimaryButton(
               buttonText: "Recharge Now",
@@ -225,12 +234,12 @@ class _AirtimeRechargeState extends State<AirtimeRecharge> {
                 } else {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
                       builder: (context) => ProcessRecharge(
-                            operatorId: widget.operatorId,
-                            countryIso: widget.countryIso,
-                            phoneNumber: _controller.text,
-                            amount: amount,
-                            iconUrl: model.data.response.logoUrls[0],
-                          )));
+                        operatorId: widget.operatorId,
+                        countryIso: widget.countryIso,
+                        phoneNumber: _controller.text,
+                        amount: amount,
+                        iconUrl: model.data.response.logoUrls[0],
+                      )));
                 }
               }),
         ]));

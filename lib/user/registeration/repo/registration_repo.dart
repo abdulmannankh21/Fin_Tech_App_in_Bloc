@@ -52,6 +52,7 @@ class RegistrationRepository {
       );
       if (response.statusCode! >= 200 && response.statusCode! <= 300) {
         final _result = json.decode(response.data);
+        print(_result);
         final model = RegistrationModel.fromJson(_result);
         return model;
       } else {

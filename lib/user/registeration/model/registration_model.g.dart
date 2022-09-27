@@ -22,8 +22,8 @@ Map<String, dynamic> _$$_RegistrationModelToJson(
     };
 
 _$_Message _$$_MessageFromJson(Map<String, dynamic> json) => _$_Message(
-      (json['error'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      (json['success'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      json['error'] as String?,
+      json['success'] as String?,
     );
 
 Map<String, dynamic> _$$_MessageToJson(_$_Message instance) =>

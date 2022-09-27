@@ -22,8 +22,8 @@ abstract class RegistrationModel with _$RegistrationModel {
 @freezed
 abstract class Message with _$Message {
   const factory Message(
-      @JsonKey(name: 'error') List<String>? error,
-      @JsonKey(name: 'success') List<String>? success,
+      @JsonKey(name: 'error') String? error,
+      @JsonKey(name: 'success') String? success,
 
       ) = _Message;
 
