@@ -32,7 +32,7 @@ class _RegistrationState extends State<Registration> {
   String _selectedCountryCode = '';
   String _selectedCountryDialCode ='';
   String _selectedCountry ='';
-  bool agree = true;
+  bool agree = false;
 
   late BuildContext myContext;
   List<CountriesCode> list =[];
@@ -276,13 +276,13 @@ class _RegistrationState extends State<Registration> {
                               Row(
                                 children: [
                                   Checkbox(
-                                      value: false,checkColor: Colors.greenAccent,
+                                      value: agree,checkColor: Colors.greenAccent,
                                   activeColor: Colors.blue,   onChanged: (value) {
                                     setState(() {
                                       agree = value!;
                                     });
                                   }),
-                                  const Text("Agree to the Terms and Conditions")
+                                  const Text("I have agreed to the Terms and Conditions")
                                 ],
                               ),
                               SizedBox(height: _size.height * 0.03),
