@@ -14,14 +14,7 @@ class MasterCardLoadingState extends MasterCardState {
   @override
   List<Object?> get props => [loadingMessage];
 }
-class MasterCardIssueState extends MasterCardState {
-  final CommonResponseModel model;
-  final token;
-  final email;
-  MasterCardIssueState(this.model,this.email,this.token);
-  @override
-  List<Object?> get props => [model];
-}
+
 
 class MasterCardSuccessState extends MasterCardState {
   final CommonResponseModel model;

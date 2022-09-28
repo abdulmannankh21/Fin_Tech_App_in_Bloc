@@ -10,6 +10,7 @@ abstract class CommonResponseModel with _$CommonResponseModel {
       String? status,
       int code,
       String message,
+      String? fee,
       ) = _CommonResponseModel;
 
   factory CommonResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -21,6 +22,8 @@ abstract class MasterCardDetails with _$MasterCardDetails {
   const factory MasterCardDetails(
       String result,
       int code,
+      String? message,
+      String? fee,
       String? weavrtoken,
       String? cardNumber,
       String? uikey,

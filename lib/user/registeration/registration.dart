@@ -131,6 +131,7 @@ class _RegistrationState extends State<Registration> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
 
+
                               SizedBox(height: _size.height * 0.01),
                               Center(
                                 child: Text(
@@ -143,6 +144,48 @@ class _RegistrationState extends State<Registration> {
                                 ),
                               ),
                               SizedBox(height: _size.height * 0.04),
+
+
+                              Container(
+                                width: MediaQuery.of(context).size.width,
+                                child: DropdownButtonFormField<String>(
+                                  isExpanded: true,
+                                  dropdownColor: Theme.of(context).scaffoldBackgroundColor,
+                                  decoration: const InputDecoration(
+                                    enabledBorder: UnderlineInputBorder(),
+
+
+                                  ),
+                                  items:
+                                  profiles.map<DropdownMenuItem<String>>((String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(
+                                        "${value}",
+                                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                                          color: _theme.colorScheme.onSecondary,
+                                        ),
+                                      ),
+                                    );
+                                  }).toList(),
+                                  onChanged: (String? newValue) {
+                                    setState(() {
+                                      profile = newValue!;
+                                      print(profile);
+                                    });
+                                  },
+                                  hint: Text(
+                                    "select profile type",
+                                    style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                                      color: _theme.colorScheme.onSecondary,
+                                    ),
+                                  ),
+                                  iconEnabledColor: _theme.colorScheme.onSecondary,
+                                  iconDisabledColor: _theme.colorScheme.onSecondary,
+                                ),
+                              ),
+                              SizedBox(height: _size.height * 0.03),
+
                               NewTextField(
                                 keyboardType: TextInputType.emailAddress,
                                 controller: _emailController,
@@ -171,45 +214,6 @@ class _RegistrationState extends State<Registration> {
                                 labelText: "last_name".tr,
                               ),
 
-                              SizedBox(height: _size.height * 0.03),
-                              Container(
-                                width: MediaQuery.of(context).size.width,
-                                child: DropdownButtonFormField<String>(
-                                  isExpanded: true,
-                                  dropdownColor: Theme.of(context).scaffoldBackgroundColor,
-                                  decoration: const InputDecoration(
-                                    enabledBorder: UnderlineInputBorder(),
-
-
-                                  ),
-                                  items:
-                                  profiles.map<DropdownMenuItem<String>>((String value) {
-                                    return DropdownMenuItem<String>(
-                                      value: value,
-                                      child: Text(
-                                        "${value}",
-                                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                                          color: _theme.colorScheme.onSecondary,
-                                        ),
-                                      ),
-                                    );
-                                  }).toList(),
-                                  onChanged: (String? newValue) {
-                                    setState(() {
-                                        profile = newValue!;
-                                        print(profile);
-                                    });
-                                  },
-                                  hint: Text(
-                                    "select profile type",
-                                    style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                                      color: _theme.colorScheme.onSecondary,
-                                    ),
-                                  ),
-                                  iconEnabledColor: _theme.colorScheme.onSecondary,
-                                  iconDisabledColor: _theme.colorScheme.onSecondary,
-                                ),
-                              ),
 
                               SizedBox(height: _size.height * 0.03),
                               NewTextField(

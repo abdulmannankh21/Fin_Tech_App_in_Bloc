@@ -22,12 +22,13 @@ class _$CommonResponseModelTearOff {
   const _$CommonResponseModelTearOff();
 
   _CommonResponseModel call(
-      String? result, String? status, int code, String message) {
+      String? result, String? status, int code, String message, String? fee) {
     return _CommonResponseModel(
       result,
       status,
       code,
       message,
+      fee,
     );
   }
 
@@ -45,6 +46,7 @@ mixin _$CommonResponseModel {
   String? get status => throw _privateConstructorUsedError;
   int get code => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
+  String? get fee => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -57,7 +59,8 @@ abstract class $CommonResponseModelCopyWith<$Res> {
   factory $CommonResponseModelCopyWith(
           CommonResponseModel value, $Res Function(CommonResponseModel) then) =
       _$CommonResponseModelCopyWithImpl<$Res>;
-  $Res call({String? result, String? status, int code, String message});
+  $Res call(
+      {String? result, String? status, int code, String message, String? fee});
 }
 
 /// @nodoc
@@ -75,6 +78,7 @@ class _$CommonResponseModelCopyWithImpl<$Res>
     Object? status = freezed,
     Object? code = freezed,
     Object? message = freezed,
+    Object? fee = freezed,
   }) {
     return _then(_value.copyWith(
       result: result == freezed
@@ -93,6 +97,10 @@ class _$CommonResponseModelCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
+      fee: fee == freezed
+          ? _value.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -104,7 +112,8 @@ abstract class _$CommonResponseModelCopyWith<$Res>
           $Res Function(_CommonResponseModel) then) =
       __$CommonResponseModelCopyWithImpl<$Res>;
   @override
-  $Res call({String? result, String? status, int code, String message});
+  $Res call(
+      {String? result, String? status, int code, String message, String? fee});
 }
 
 /// @nodoc
@@ -124,6 +133,7 @@ class __$CommonResponseModelCopyWithImpl<$Res>
     Object? status = freezed,
     Object? code = freezed,
     Object? message = freezed,
+    Object? fee = freezed,
   }) {
     return _then(_CommonResponseModel(
       result == freezed
@@ -142,6 +152,10 @@ class __$CommonResponseModelCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
+      fee == freezed
+          ? _value.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -150,7 +164,7 @@ class __$CommonResponseModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CommonResponseModel implements _CommonResponseModel {
   const _$_CommonResponseModel(
-      this.result, this.status, this.code, this.message);
+      this.result, this.status, this.code, this.message, this.fee);
 
   factory _$_CommonResponseModel.fromJson(Map<String, dynamic> json) =>
       _$$_CommonResponseModelFromJson(json);
@@ -163,10 +177,12 @@ class _$_CommonResponseModel implements _CommonResponseModel {
   final int code;
   @override
   final String message;
+  @override
+  final String? fee;
 
   @override
   String toString() {
-    return 'CommonResponseModel(result: $result, status: $status, code: $code, message: $message)';
+    return 'CommonResponseModel(result: $result, status: $status, code: $code, message: $message, fee: $fee)';
   }
 
   @override
@@ -180,7 +196,10 @@ class _$_CommonResponseModel implements _CommonResponseModel {
             (identical(other.code, code) ||
                 const DeepCollectionEquality().equals(other.code, code)) &&
             (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+                const DeepCollectionEquality()
+                    .equals(other.message, message)) &&
+            (identical(other.fee, fee) ||
+                const DeepCollectionEquality().equals(other.fee, fee)));
   }
 
   @override
@@ -189,7 +208,8 @@ class _$_CommonResponseModel implements _CommonResponseModel {
       const DeepCollectionEquality().hash(result) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(message);
+      const DeepCollectionEquality().hash(message) ^
+      const DeepCollectionEquality().hash(fee);
 
   @JsonKey(ignore: true)
   @override
@@ -204,9 +224,8 @@ class _$_CommonResponseModel implements _CommonResponseModel {
 }
 
 abstract class _CommonResponseModel implements CommonResponseModel {
-  const factory _CommonResponseModel(
-          String? result, String? status, int code, String message) =
-      _$_CommonResponseModel;
+  const factory _CommonResponseModel(String? result, String? status, int code,
+      String message, String? fee) = _$_CommonResponseModel;
 
   factory _CommonResponseModel.fromJson(Map<String, dynamic> json) =
       _$_CommonResponseModel.fromJson;
@@ -219,6 +238,8 @@ abstract class _CommonResponseModel implements CommonResponseModel {
   int get code => throw _privateConstructorUsedError;
   @override
   String get message => throw _privateConstructorUsedError;
+  @override
+  String? get fee => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CommonResponseModelCopyWith<_CommonResponseModel> get copyWith =>
@@ -236,6 +257,8 @@ class _$MasterCardDetailsTearOff {
   _MasterCardDetails call(
       String result,
       int code,
+      String? message,
+      String? fee,
       String? weavrtoken,
       String? cardNumber,
       String? uikey,
@@ -246,6 +269,8 @@ class _$MasterCardDetailsTearOff {
     return _MasterCardDetails(
       result,
       code,
+      message,
+      fee,
       weavrtoken,
       cardNumber,
       uikey,
@@ -268,6 +293,8 @@ const $MasterCardDetails = _$MasterCardDetailsTearOff();
 mixin _$MasterCardDetails {
   String get result => throw _privateConstructorUsedError;
   int get code => throw _privateConstructorUsedError;
+  String? get message => throw _privateConstructorUsedError;
+  String? get fee => throw _privateConstructorUsedError;
   String? get weavrtoken => throw _privateConstructorUsedError;
   String? get cardNumber => throw _privateConstructorUsedError;
   String? get uikey => throw _privateConstructorUsedError;
@@ -290,6 +317,8 @@ abstract class $MasterCardDetailsCopyWith<$Res> {
   $Res call(
       {String result,
       int code,
+      String? message,
+      String? fee,
       String? weavrtoken,
       String? cardNumber,
       String? uikey,
@@ -312,6 +341,8 @@ class _$MasterCardDetailsCopyWithImpl<$Res>
   $Res call({
     Object? result = freezed,
     Object? code = freezed,
+    Object? message = freezed,
+    Object? fee = freezed,
     Object? weavrtoken = freezed,
     Object? cardNumber = freezed,
     Object? uikey = freezed,
@@ -329,6 +360,14 @@ class _$MasterCardDetailsCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as int,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fee: fee == freezed
+          ? _value.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as String?,
       weavrtoken: weavrtoken == freezed
           ? _value.weavrtoken
           : weavrtoken // ignore: cast_nullable_to_non_nullable
@@ -371,6 +410,8 @@ abstract class _$MasterCardDetailsCopyWith<$Res>
   $Res call(
       {String result,
       int code,
+      String? message,
+      String? fee,
       String? weavrtoken,
       String? cardNumber,
       String? uikey,
@@ -395,6 +436,8 @@ class __$MasterCardDetailsCopyWithImpl<$Res>
   $Res call({
     Object? result = freezed,
     Object? code = freezed,
+    Object? message = freezed,
+    Object? fee = freezed,
     Object? weavrtoken = freezed,
     Object? cardNumber = freezed,
     Object? uikey = freezed,
@@ -412,6 +455,14 @@ class __$MasterCardDetailsCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as int,
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fee == freezed
+          ? _value.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as String?,
       weavrtoken == freezed
           ? _value.weavrtoken
           : weavrtoken // ignore: cast_nullable_to_non_nullable
@@ -450,6 +501,8 @@ class _$_MasterCardDetails implements _MasterCardDetails {
   const _$_MasterCardDetails(
       this.result,
       this.code,
+      this.message,
+      this.fee,
       this.weavrtoken,
       this.cardNumber,
       this.uikey,
@@ -465,6 +518,10 @@ class _$_MasterCardDetails implements _MasterCardDetails {
   final String result;
   @override
   final int code;
+  @override
+  final String? message;
+  @override
+  final String? fee;
   @override
   final String? weavrtoken;
   @override
@@ -482,7 +539,7 @@ class _$_MasterCardDetails implements _MasterCardDetails {
 
   @override
   String toString() {
-    return 'MasterCardDetails(result: $result, code: $code, weavrtoken: $weavrtoken, cardNumber: $cardNumber, uikey: $uikey, cvv: $cvv, name_on_card: $name_on_card, expiration: $expiration, webview_url: $webview_url)';
+    return 'MasterCardDetails(result: $result, code: $code, message: $message, fee: $fee, weavrtoken: $weavrtoken, cardNumber: $cardNumber, uikey: $uikey, cvv: $cvv, name_on_card: $name_on_card, expiration: $expiration, webview_url: $webview_url)';
   }
 
   @override
@@ -493,6 +550,11 @@ class _$_MasterCardDetails implements _MasterCardDetails {
                 const DeepCollectionEquality().equals(other.result, result)) &&
             (identical(other.code, code) ||
                 const DeepCollectionEquality().equals(other.code, code)) &&
+            (identical(other.message, message) ||
+                const DeepCollectionEquality()
+                    .equals(other.message, message)) &&
+            (identical(other.fee, fee) ||
+                const DeepCollectionEquality().equals(other.fee, fee)) &&
             (identical(other.weavrtoken, weavrtoken) ||
                 const DeepCollectionEquality()
                     .equals(other.weavrtoken, weavrtoken)) &&
@@ -519,6 +581,8 @@ class _$_MasterCardDetails implements _MasterCardDetails {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(result) ^
       const DeepCollectionEquality().hash(code) ^
+      const DeepCollectionEquality().hash(message) ^
+      const DeepCollectionEquality().hash(fee) ^
       const DeepCollectionEquality().hash(weavrtoken) ^
       const DeepCollectionEquality().hash(cardNumber) ^
       const DeepCollectionEquality().hash(uikey) ^
@@ -542,6 +606,8 @@ abstract class _MasterCardDetails implements MasterCardDetails {
   const factory _MasterCardDetails(
       String result,
       int code,
+      String? message,
+      String? fee,
       String? weavrtoken,
       String? cardNumber,
       String? uikey,
@@ -557,6 +623,10 @@ abstract class _MasterCardDetails implements MasterCardDetails {
   String get result => throw _privateConstructorUsedError;
   @override
   int get code => throw _privateConstructorUsedError;
+  @override
+  String? get message => throw _privateConstructorUsedError;
+  @override
+  String? get fee => throw _privateConstructorUsedError;
   @override
   String? get weavrtoken => throw _privateConstructorUsedError;
   @override

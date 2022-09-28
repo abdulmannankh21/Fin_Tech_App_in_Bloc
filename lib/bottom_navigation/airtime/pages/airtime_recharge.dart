@@ -51,8 +51,50 @@ class _AirtimeRechargeState extends State<AirtimeRecharge> {
     final _size = MediaQuery.of(context).size;
     final _theme = Theme.of(context);
     return Scaffold(
-        appBar: CustomAppBar(
-          title: "Airtime Select Amount",
+        appBar: PreferredSize(
+            preferredSize: new Size(
+                MediaQuery.of(context).size.width,
+                100.0
+            ),
+            child: Stack(
+                children: [
+                  Container(
+                    height: 100,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                        color: Color(0XFF87F0FF),
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(60),
+                            bottomRight: Radius.circular(60))),
+                  ),Container(
+                    height:95,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                        color: Color(0XFF009FE3),
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(60),
+                            bottomRight: Radius.circular(60))),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              IconButton(onPressed: (){
+                                Navigator.of(context).pop();
+                              }, icon: Icon(
+                                  Icons.arrow_back,color: Colors.white)),
+                              SizedBox(width: _size.width*0.1),
+
+                              Text("Airtime Select Amount",
+                                  style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold)),
+                            ]
+                        )
+                      ],
+                    ),
+                  ),
+                ]
+            )
         ),
         resizeToAvoidBottomInset: false,
         body: BlocBuilder<AirtimeRechargeCubit, AirtimeRechargeState>(

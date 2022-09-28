@@ -104,8 +104,18 @@ class MasterCardRepository {
     }
   }
 
-  Future<CommonResponseModel> issueCard() async {
-    const path = "${EndPointURL.baseURL}/api/issuemastercard";
+  Future<CommonResponseModel> issueCard(
+      {
+        required String addressLine1,
+        String? addressLine2,
+        required String city,
+        required String state,
+        required String country,
+        required String zipCode
+      }
+      ) async {
+    String path = "${EndPointURL.baseURL}/api/issuemastercard?line_1=${addressLine1}&line_2=${addressLine2}&city=${city}&state=${state}&country=${country}&zip=${zipCode}";
+    print(path);
     final email = await MySharedPreferences().getStringValue(Constant.email);
     final token = await MySharedPreferences().getStringValue(Constant.logintoken);
     try {

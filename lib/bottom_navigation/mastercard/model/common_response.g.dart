@@ -13,6 +13,7 @@ _$_CommonResponseModel _$$_CommonResponseModelFromJson(
       json['status'] as String?,
       json['code'] as int,
       json['message'] as String,
+      json['fee'] as String?,
     );
 
 Map<String, dynamic> _$$_CommonResponseModelToJson(
@@ -22,12 +23,15 @@ Map<String, dynamic> _$$_CommonResponseModelToJson(
       'status': instance.status,
       'code': instance.code,
       'message': instance.message,
+      'fee': instance.fee,
     };
 
 _$_MasterCardDetails _$$_MasterCardDetailsFromJson(Map<String, dynamic> json) =>
     _$_MasterCardDetails(
       json['result'] as String,
       json['code'] as int,
+      json['message'] as String?,
+      json['fee'] as String?,
       json['weavrtoken'] as String?,
       json['cardNumber'] as String?,
       json['uikey'] as String?,
@@ -42,6 +46,8 @@ Map<String, dynamic> _$$_MasterCardDetailsToJson(
     <String, dynamic>{
       'result': instance.result,
       'code': instance.code,
+      'message': instance.message,
+      'fee': instance.fee,
       'weavrtoken': instance.weavrtoken,
       'cardNumber': instance.cardNumber,
       'uikey': instance.uikey,

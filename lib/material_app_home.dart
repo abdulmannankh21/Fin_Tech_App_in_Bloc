@@ -7,6 +7,7 @@ import 'package:flutter_app/bottom_navigation/cards/create_addon_cards/cubit/iss
 import 'package:flutter_app/bottom_navigation/cards/load_funds_on_card/cubit/load_funds_on_card_cubit.dart';
 import 'package:flutter_app/bottom_navigation/deposit/cubit/deposit_cubit.dart';
 import 'package:flutter_app/bottom_navigation/mastercard/cubit/mastercard_cubit.dart';
+import 'package:flutter_app/bottom_navigation/mastercard/issue_card/cubit/issuecard_cubit.dart';
 import 'package:flutter_app/bottom_navigation/mastercard/load_funds/cubit/mastercard_load_funds_cubit.dart';
 import 'package:flutter_app/bottom_navigation/mastercard/transactions/cubit/transaction_cubit.dart';
 import 'package:flutter_app/bottom_navigation/wallets/add_fund/cubit/add_fund_wallet_cubit.dart';
@@ -129,6 +130,12 @@ class _MaterialAppHomeState extends State<MaterialAppHome> {
           ),
           BlocProvider<MasterCardCubit>(
             create: (context) => MasterCardCubit(
+              repository: GetIt.I<MasterCardRepository>(),
+            ),
+          ),
+
+          BlocProvider<MasterCardIssueCubit>(
+            create: (context) => MasterCardIssueCubit(
               repository: GetIt.I<MasterCardRepository>(),
             ),
           ),

@@ -12,6 +12,7 @@ import 'package:flutter_app/bottom_navigation/cards/transaction/card_transaction
 import 'package:flutter_app/bottom_navigation/cards/unblock_card/cubit/unblock_card_cubit.dart';
 import 'package:flutter_app/bottom_navigation/mastercard/cubit/mastercard_cubit.dart';
 import 'package:flutter_app/bottom_navigation/mastercard/pages/load_funds_screen.dart';
+import 'package:flutter_app/bottom_navigation/mastercard/pages/mastercard_issue_screen.dart';
 import 'package:flutter_app/bottom_navigation/mastercard/pages/mastercard_transaction_screen.dart';
 import 'package:flutter_app/core/app_configs/screen_names.dart';
 import 'package:flutter_app/core/data/endpoint/endpoint_url.dart';
@@ -57,6 +58,7 @@ class _MasterCardScreenState extends State<MasterCardScreen> {
     final _themeData = Theme.of(context);
     return BlocConsumer<MasterCardCubit, MasterCardState>(
       listener: (context, state) {
+
 
       },
       builder: (context, state) {
@@ -167,7 +169,8 @@ class _MasterCardScreenState extends State<MasterCardScreen> {
                 child: Center(
                   child: ElevatedButton(
                     onPressed: () {
-                      context.read<CarddetailsCubit>().issueCard();
+                      //context.read<MasterCardCubit>().issueCard();
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => MasterCardIssueScreen(fees: state.model.fee),));
                     },
                     style: ButtonStyle(
                       backgroundColor:

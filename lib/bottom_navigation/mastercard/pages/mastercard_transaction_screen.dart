@@ -271,6 +271,15 @@ class _MasterCardTransactionScreenState extends State<MasterCardTransactionScree
                                       );
                                     },
                                     leadingText: _model!.txId!.type[0],
+                                    leading: (double.parse(_model
+                                        .transactionAmount!.amount) >
+                                        0)
+                                        ? Icon(
+                                      Icons.arrow_drop_down_outlined,
+                                      color: Colors.green,
+                                    )
+                                        : Icon(Icons.arrow_drop_up_outlined,
+                                        color: Colors.red),
                                     title: _model.additionalFields!.merchantName != null ? _model.additionalFields!.merchantName! : "Transaction",
                                     description: processTimeStamp(double.parse(_model.processedTimestamp!)),
                                     amount:
