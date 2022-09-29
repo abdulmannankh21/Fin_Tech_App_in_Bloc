@@ -99,7 +99,7 @@ class _AirtimeSelectCountryState extends State<AirtimeSelectCountry> {
                       ),
                     ),
                   )),
-              SizedBox(height: 20),
+              SizedBox(height: 4),
               Container(child: Card(child:
                   BlocBuilder<AirtimeCubit, AirtimeState>(
                       builder: (context, state) {
@@ -108,7 +108,7 @@ class _AirtimeSelectCountryState extends State<AirtimeSelectCountry> {
                       padding: EdgeInsets.all(14), child: LoadingScreen());
                 } else if (state is AirtimeSuccesstate) {
                   return Container(
-                      height: _size.height * 0.55,
+                      height: _size.height * 0.48,
                       child: GridView.builder(
                           physics: ScrollPhysics(),
                           shrinkWrap: true,

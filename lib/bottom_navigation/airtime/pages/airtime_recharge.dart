@@ -163,7 +163,7 @@ class _AirtimeRechargeState extends State<AirtimeRecharge> {
 
                     ],
                   ))),
-          const SizedBox(height: 20),
+          const SizedBox(height: 4),
           Container(
               height: _size.height * 0.38,
               child: Card(
@@ -202,7 +202,7 @@ class _AirtimeRechargeState extends State<AirtimeRecharge> {
                                             child: Container(
                                                 padding: EdgeInsets.all(10),
                                                 color: _selectedIndex == index
-                                                    ? Colors.orange
+                                                    ? ConstantColors.welcome_sign_in_second_circle
                                                     : Colors.white,
 
                                                 child: Row(
@@ -257,33 +257,93 @@ class _AirtimeRechargeState extends State<AirtimeRecharge> {
                               })
                         ],
                       )))),
-          SizedBox(height: 30),
-          XenioPrimaryButton(
-              buttonText: "Recharge Now",
-              color: ConstantColors.primaryCyan,
-              buttonTextColor: Colors.white,
-              onTap: () {
-                if (_controller.text.contains(".") ||
-                    _controller.text.contains(",") ||
-                    _controller.text.contains("-") ||
-                    _controller.text.contains(" ")) {
-                  "Special Character Not Allowed in Phone Number"
-                      .showSnackBar(context);
-                } else if (_controller.text.isEmpty) {
-                  "Please Enter Phone Number".showSnackBar(context);
-                } else if (_selectedIndex == -1) {
-                  "Please select amount".showSnackBar(context);
-                } else {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => ProcessRecharge(
-                        operatorId: widget.operatorId,
-                        countryIso: widget.countryIso,
-                        phoneNumber: _controller.text,
-                        amount: amount,
-                        iconUrl: model.data.response.logoUrls[0],
-                      )));
-                }
-              }),
+          SizedBox(height: 10),
+          Container(
+            margin: EdgeInsets.only(left: _size.width*0.1,right: _size.width*0.1),
+
+            child: GestureDetector(
+                onTap: () {
+                  if (_controller.text.contains(".") ||
+                      _controller.text.contains(",") ||
+                      _controller.text.contains("-") ||
+                      _controller.text.contains(" ")) {
+                    "Special Character Not Allowed in Phone Number"
+                        .showSnackBar(context);
+                  } else if (_controller.text.isEmpty) {
+                    "Please Enter Phone Number".showSnackBar(context);
+                  } else if (_selectedIndex == -1) {
+                    "Please select amount".showSnackBar(context);
+                  } else {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => ProcessRecharge(
+                          operatorId: widget.operatorId,
+                          countryIso: widget.countryIso,
+                          phoneNumber: _controller.text,
+                          amount: amount,
+                          iconUrl: model.data.response.logoUrls[0],
+                        )));
+                  }
+
+                },
+                child: Stack(children: [
+                  Container(
+                    width: _size.width*0.8,
+                    height: _size.height*0.08,
+                    padding: EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      color: Colors.indigoAccent,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Recharge",
+                          style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        SizedBox(width: 100, child: Icon(Icons.arrow_forward,color: Colors.white,))
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: _size.width*0.8,
+                    height: 20,
+                    alignment: Alignment.topRight,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(70),
+                        topRight: Radius.circular(80),
+                      ),
+                      child: Container(
+                        margin: EdgeInsets.only(right: 10),
+                        color: ConstantColors.welcome_sign_in_second_circle,
+                        width: 30,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width*0.8,
+                    height: 25,
+                    alignment: Alignment.topRight,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(40),
+                          // topLeft: Radius.circular(5)
+                          topRight: Radius.circular(28)
+                      ),
+                      child: Container(
+                        color: ConstantColors.welcome_sign_in_first_circle,
+                        alignment: Alignment.centerRight,
+                        width: 25,
+                      ),
+                    ),
+                  ),
+                ])),
+          ),
+
         ]));
   }
 }

@@ -84,11 +84,11 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
 
   void _onItemTapped(int index) {
     setState(() {
-      // if (index == 2) {
-      //   _scan();
-      // } else {
+      if (index == 2) {
+        _scan();
+      } else {
         _selectedIndex = index;
-      // }
+       }
     });
   }
 
@@ -104,7 +104,7 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
       ),
       child: const CardsScreen(),
     ),
-     //Container(),
+     Container(),
     const MasterCardScreen(),
     const AirtimeSelectCountry(),
 
@@ -246,21 +246,21 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
         iconLabel: ConstanceData.cardTitle,
         isSelected: _selectedIndex == 1,
       ),
-      // getNavigatoinBarItem(
-      //   iconName: ConstanceData.scanner,
-      //   iconLabel: ConstanceData.scannerTitle,
-      //   isSelected: _selectedIndex == 1,
-      //   isScanner: true,
-      // ),
       getNavigatoinBarItem(
-        iconName: ConstanceData.bank,
-        iconLabel: ConstanceData.bankTitle,
+        iconName: ConstanceData.scanner,
+        iconLabel: ConstanceData.scannerTitle,
         isSelected: _selectedIndex == 2,
+        isScanner: true,
       ),
       getNavigatoinBarItem(
-        iconName: ConstanceData.crypto,
-        iconLabel: ConstanceData.cryptoTitle,
+        iconName: ConstanceData.mastercard,
+        iconLabel: ConstanceData.bankTitle,
         isSelected: _selectedIndex == 3,
+      ),
+      getNavigatoinBarItem(
+        iconName: ConstanceData.phone,
+        iconLabel: ConstanceData.cryptoTitle,
+        isSelected: _selectedIndex == 4,
       ),
     ];
   }

@@ -38,6 +38,7 @@ class ConstanceData {
       "XENIO is a financial solution provider offering neobanking products for financial companies. With XENIO you can start your neobanking services in a matter of hours.";
 
   static const mastercard = "assets/mastercard.png";
+  static const phone = "assets/mobile.png";
   static const visa = "assets/visa.png";
 
   static const p1 = "${baseImageUrl}p1.png";

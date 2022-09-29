@@ -165,22 +165,80 @@ class _MasterCardScreenState extends State<MasterCardScreen> {
             );
           } else {
             return Container(
-                height: _size.height / 1.5,
-                child: Center(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      //context.read<MasterCardCubit>().issueCard();
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => MasterCardIssueScreen(fees: state.model.fee),));
-                    },
-                    style: ButtonStyle(
-                      backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.blueAccent),
-                    ),
-                    child: Text(
-                      'Issue Card',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                child: Column(
+                  children: [
+                    SizedBox(height: 20,),
+                  Text("Prepaid MasterCard",style: TextStyle(
+                    fontSize: 24,fontWeight: FontWeight.w700
+                  ),),
+                    SizedBox(height: _size.height*0.3,),
+                  Center(
+                  child:Container(
+                    margin: EdgeInsets.only(left: _size.width*0.1,right: _size.width*0.1),
+
+                    child: GestureDetector(
+                        onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => MasterCardIssueScreen(fees: state.model.fee),));
+                        },
+                        child: Stack(children: [
+                          Container(
+                            width: _size.width*0.5,
+                            height: _size.height*0.08,
+                            padding: EdgeInsets.only(left: 10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                              color: Colors.indigoAccent,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Apply Now",
+                                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: _size.width*0.5,
+                            height: 20,
+                            alignment: Alignment.topRight,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(70),
+                                topRight: Radius.circular(80),
+                              ),
+                              child: Container(
+                                margin: EdgeInsets.only(right: 10),
+                                color: ConstantColors.welcome_sign_in_second_circle,
+                                width: 30,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width*0.5,
+                            height: 25,
+                            alignment: Alignment.topRight,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(40),
+                                  // topLeft: Radius.circular(5)
+                                  topRight: Radius.circular(28)
+                              ),
+                              child: Container(
+                                color: ConstantColors.welcome_sign_in_first_circle,
+                                alignment: Alignment.centerRight,
+                                width: 25,
+                              ),
+                            ),
+                          ),
+                        ])),
                   ),
+                )
+                ],
                 ));
           }
         } else {

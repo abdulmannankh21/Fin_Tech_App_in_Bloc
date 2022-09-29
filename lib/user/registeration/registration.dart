@@ -145,7 +145,6 @@ class _RegistrationState extends State<Registration> {
                               ),
                               SizedBox(height: _size.height * 0.04),
 
-
                               Container(
                                 width: MediaQuery.of(context).size.width,
                                 child: DropdownButtonFormField<String>(
@@ -185,6 +184,13 @@ class _RegistrationState extends State<Registration> {
                                 ),
                               ),
                               SizedBox(height: _size.height * 0.03),
+                              profile == "Merchant" ?
+                              NewTextField(
+                                controller: _companyController,
+                                labelText: "Company",
+                              ): Container(),
+                              profile == "Merchant" ?
+                              SizedBox(height: _size.height * 0.03):Container(),
 
                               NewTextField(
                                 keyboardType: TextInputType.emailAddress,
@@ -222,13 +228,7 @@ class _RegistrationState extends State<Registration> {
                               ),
 
                               SizedBox(height: _size.height * 0.03),
-                              profile == "Merchant" ?
-                              NewTextField(
-                                controller: _companyController,
-                                labelText: "Company",
-                              ): Container(),
 
-                              SizedBox(height: _size.height * 0.03),
                               Container(
                                 width: MediaQuery.of(context).size.width,
                                 child: DropdownButtonFormField<CountriesCode>(
