@@ -84,11 +84,11 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
 
   void _onItemTapped(int index) {
     setState(() {
-      if (index == 2) {
-        _scan();
-      } else {
-        _selectedIndex = index;
-       }
+      // if (index == 2) {
+      //   _scan();
+      // } else {
+      _selectedIndex = index;
+      //  }
     });
   }
 
@@ -104,7 +104,7 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
       ),
       child: const CardsScreen(),
     ),
-     Container(),
+    //Container(),
     const MasterCardScreen(),
     const AirtimeSelectCountry(),
 
@@ -158,6 +158,8 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
     bottomNavList = getBottomNavigationList();
     return Scaffold(
       appBar: CustomAppBar(
+
+        backgroundColor: ConstantColors.appBar,
         centerTitle: false,
         title: (context.watch<DashboardCubit>().name == null)
             ? ConstanceData.appName
@@ -166,7 +168,7 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
         leading: GestureDetector(
           onTap: () {
 
-            print(name);
+
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -189,7 +191,7 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
             onPressed: _share,
             icon: const Icon(
               Icons.share,
-              color: Colors.grey,
+              color: Colors.white38,
             ),
           ),
         ],
@@ -198,6 +200,23 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
         index: _selectedIndex,
         children: _screen,
       ),
+      floatingActionButton: new FloatingActionButton(
+
+          onPressed:(){  _scan();},
+          tooltip: 'Increment',
+          backgroundColor: Colors.white,
+          focusElevation: 20,
+          elevation: 10,
+
+
+
+          child: Container(
+            height: 30,
+            child: Image.asset('assets/images/scanner.png',color: ConstantColors.appBar),
+          )
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
@@ -246,21 +265,21 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
         iconLabel: ConstanceData.cardTitle,
         isSelected: _selectedIndex == 1,
       ),
-      getNavigatoinBarItem(
-        iconName: ConstanceData.scanner,
-        iconLabel: ConstanceData.scannerTitle,
-        isSelected: _selectedIndex == 2,
-        isScanner: true,
-      ),
+      // getNavigatoinBarItem(
+      //   iconName: ConstanceData.scanner,
+      //   iconLabel: ConstanceData.scannerTitle,
+      //   isSelected: _selectedIndex == 2,
+      //   isScanner: true,
+      // ),
       getNavigatoinBarItem(
         iconName: ConstanceData.mastercard,
         iconLabel: ConstanceData.bankTitle,
-        isSelected: _selectedIndex == 3,
+        isSelected: _selectedIndex == 2,
       ),
       getNavigatoinBarItem(
         iconName: ConstanceData.phone,
         iconLabel: ConstanceData.cryptoTitle,
-        isSelected: _selectedIndex == 4,
+        isSelected: _selectedIndex == 3,
       ),
     ];
   }
@@ -275,27 +294,27 @@ class _BottomNavigationHomeState extends State<BottomNavigationHome> {
       icon: Container(
         decoration: isSelected
             ? const BoxDecoration(
-                color: Colors.white12,
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(2, 2),
-                    blurRadius: 12,
-                    color: Colors.white12,
-                  ),
-                ],
-              )
+          color: Colors.white12,
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(2, 2),
+              blurRadius: 12,
+              color: Colors.white12,
+            ),
+          ],
+        )
             : const BoxDecoration(
-                color: ConstantColors.appBar,
-              ),
+          color: ConstantColors.appBar,
+        ),
         padding:
-            isSelected ? const EdgeInsets.all(12) : const EdgeInsets.all(10),
+        isSelected ? const EdgeInsets.all(12) : const EdgeInsets.all(10),
         child: iconName.getImageByName(
           imageHeight: isScanner
               ? 30
               : isSelected
-                  ? 25
-                  : 20,
+              ? 25
+              : 20,
           color: isSelected ? Colors.white : Colors.white54,
         ),
       ),

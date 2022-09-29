@@ -163,7 +163,25 @@ class _MasterCardScreenState extends State<MasterCardScreen> {
                 ),
               ],
             );
-          } else {
+          } else if(state.model.code == 410){
+            return Container(
+              child: Column(
+                children: [
+                  SizedBox(height: 20,),
+                  Text("Prepaid MasterCard",style: TextStyle(
+                      fontSize: 24,fontWeight: FontWeight.w700
+                  ),),
+                  SizedBox(height: _size.height*0.3,),
+                  Container(
+                    margin: EdgeInsets.all(10),
+                    child: Center(child: Text("${state.model.message}",style: TextStyle(
+                      fontSize: 18,fontWeight: FontWeight.w400
+                  ),))
+                  )
+                ],
+              ),
+            );
+          }else {
             return Container(
                 child: Column(
                   children: [

@@ -117,8 +117,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 // } else {
 
                 return Column(
+
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(height: 4),
                     Card(
                       elevation: 2.0,
                       shape: RoundedRectangleBorder(
@@ -245,10 +247,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 6.0),
+                    const SizedBox(height: 3.0),
                     (state.model.currency != null)
                         ? Container(
-                            height: _size.height * 0.15,
+                            height: _size.height * 0.14,
                             width: _size.width,
                             child: ListView.builder(
                               itemCount: state.model.currency!.length,
@@ -314,7 +316,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           )
                         : Container(),
-                    const SizedBox(height: 6.0),
+                    const SizedBox(height: 3.0),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Row(

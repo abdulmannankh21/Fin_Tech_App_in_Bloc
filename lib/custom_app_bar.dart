@@ -57,7 +57,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
       title: Text(
         widget.title ?? "",
         style: TextStyle(
-          color: _theme.colorScheme.onSurface,
+          color: Colors.white,
           fontWeight: FontWeight.w600,
           fontSize: 18.0,
         ),
