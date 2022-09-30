@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ConstantColors {
- // static const primaryCyan = Color(0XFF37C8C3);
-  static const primaryCyan = Color(0XFF2743FD);
+  static const primaryCyan = Color(0XFF37C8C3);
+  // static const primaryCyan = Color(0XFF2743FD);
   static const primaryLightCyan = Color(0XFF15C2D1);
   static const secondaryCyanDark = Color(0XFF21A7B3);
-
 
   static const welcome_sign_up_text_color = Color(0XFF2743FD);
   static const welcome_sign_up_border_color = Color(0XFF4960F9);
@@ -17,7 +16,6 @@ class ConstantColors {
   static const success_right_corner_circle = Color(0XFF43BEF4);
 
   static const otp_first_circle = Color(0XFFFC4900);
-
 
   // static const primaryBackgournd = Color(0XFFEBF5F5);
   // static const scaffoldBackgournd = Color(0XFFD4E2E2);

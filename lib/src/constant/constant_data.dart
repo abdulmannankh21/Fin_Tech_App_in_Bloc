@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../src/language/language_data.dart';
 
 class ConstanceData {
-  static const primarycolor = Color(0XFF3D87FF);
-  static const secondarycolor = Color(0XFF34C98E);
+  static const primarycolor = Color(0XFF009FE3);
+  static const secondarycolor = Color(0XFF009FE3);
 
   static const baseImageUrl = 'assets/';
 
@@ -18,10 +18,10 @@ class ConstanceData {
   static const String scanner = "assets/images/scanner.png";
 
   static const String dashboardTitle = "Dashboard";
-  static const String cardTitle = "Card";
+  static const String cardTitle = "CloseCard";
   static const String scannerTitle = "Scanner";
-  static const String cryptoTitle = "Crypto";
-  static const String bankTitle = "Bank";
+  static const String cryptoTitle = "Airtime";
+  static const String bankTitle = "MasterCard";
 
   //!Get started page
   static const String getStartedInfo = "All Your Finances Inside";
