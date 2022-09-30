@@ -12,7 +12,7 @@ class UserModel with _$UserModel {
     String? message,
     String? token,
     @JsonKey(name: 'user') User? user,
-    String? isagent,
+
   ) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>

@@ -9,7 +9,7 @@ class User with _$User {
     String? name,
     String? email,
     @JsonKey(name: 'ewallet_id') String? ewalletId,
-    int ids,
+    int? ids,
     @JsonKey(name: 'phone_number') String? phoneNumber,
     @JsonKey(name: 'card_id') String? cardId,
     String? type,

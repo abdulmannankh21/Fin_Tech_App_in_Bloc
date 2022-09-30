@@ -50,54 +50,59 @@ class LoginCubit extends Cubit<LoginState> {
           email: email,
           password: password,
         );
-        await MySharedPreferences().setStringeanValue(
-          key: Constant.password,
-          value: password,
-        );
+        if(userModel.result! =='success') {
+          await MySharedPreferences().setStringeanValue(
+            key: Constant.password,
+            value: password,
+          );
 
-        ///Listen this [profileImage and name] in homepage
-        // profileImage = userModel.user?.image;
-        // name = userModel.user?.name;
-        // ewalletId = userModel.user?.ewalletId;
-        //
-        //Save email and password to chache
-        await MySharedPreferences().setStringeanValue(
-          key: Constant.loginUserType,
-          value: userModel.user!.type??"",
-        );
-        await MySharedPreferences().setStringeanValue(
-          key: Constant.phone,
-          value: userModel.user!.phoneNumber??"",
-        );
-        await MySharedPreferences().setStringeanValue(
-          key: Constant.name,
-          value: userModel.user!.name
-              ??"",
-        );
+          ///Listen this [profileImage and name] in homepage
+          // profileImage = userModel.user?.image;
+          // name = userModel.user?.name;
+          // ewalletId = userModel.user?.ewalletId;
+          //
+          //Save email and password to chache
+          await MySharedPreferences().setStringeanValue(
+            key: Constant.loginUserType,
+            value: userModel.user!.type ?? "",
+          );
+          await MySharedPreferences().setStringeanValue(
+            key: Constant.phone,
+            value: userModel.user!.phoneNumber ?? "",
+          );
+          await MySharedPreferences().setStringeanValue(
+            key: Constant.name,
+            value: userModel.user!.name
+                ?? "",
+          );
 
-        await MySharedPreferences().setStringeanValue(
-          key: Constant.profileImage,
-          value: userModel.user!.merchant_logo!,
-        );
+          await MySharedPreferences().setStringeanValue(
+            key: Constant.profileImage,
+            value: userModel.user!.merchant_logo!,
+          );
 
-        await MySharedPreferences().setStringeanValue(
-          key: Constant.parentId,
-          value: userModel.user!.ids.toString(),
-        );
-        await MySharedPreferences().setStringeanValue(
-          key: Constant.ewalletId,
-          value: userModel.user!.ewalletId!,
-        );
-        await MySharedPreferences().setStringeanValue(
-          key: Constant.email,
-          value: userModel.user!.email!,
-        );
-        await MySharedPreferences().setStringeanValue(
-          key: Constant.logintoken,
-          value: userModel.token!,
-        );
-        await MySharedPreferences().setBooleanValue(key: Constant.firstTimeOpen, value: true);
-        emit(LoginSuccess(userModel: userModel));
+          await MySharedPreferences().setStringeanValue(
+            key: Constant.parentId,
+            value: userModel.user!.ids.toString(),
+          );
+          await MySharedPreferences().setStringeanValue(
+            key: Constant.ewalletId,
+            value: userModel.user!.ewalletId!,
+          );
+          await MySharedPreferences().setStringeanValue(
+            key: Constant.email,
+            value: userModel.user!.email!,
+          );
+          await MySharedPreferences().setStringeanValue(
+            key: Constant.logintoken,
+            value: userModel.token!,
+          );
+          await MySharedPreferences().setBooleanValue(
+              key: Constant.firstTimeOpen, value: true);
+        }
+          emit(LoginSuccess(userModel: userModel));
+
+
       }
     } on HtpCustomError catch (e) {
       emit(LoginError(

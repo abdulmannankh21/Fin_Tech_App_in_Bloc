@@ -25,7 +25,7 @@ class _$UserTearOff {
       String? name,
       String? email,
       @JsonKey(name: 'ewallet_id') String? ewalletId,
-      int ids,
+      int? ids,
       @JsonKey(name: 'phone_number') String? phoneNumber,
       @JsonKey(name: 'card_id') String? cardId,
       String? type,
@@ -58,7 +58,7 @@ mixin _$User {
   String? get email => throw _privateConstructorUsedError;
   @JsonKey(name: 'ewallet_id')
   String? get ewalletId => throw _privateConstructorUsedError;
-  int get ids => throw _privateConstructorUsedError;
+  int? get ids => throw _privateConstructorUsedError;
   @JsonKey(name: 'phone_number')
   String? get phoneNumber => throw _privateConstructorUsedError;
   @JsonKey(name: 'card_id')
@@ -81,7 +81,7 @@ abstract class $UserCopyWith<$Res> {
       {String? name,
       String? email,
       @JsonKey(name: 'ewallet_id') String? ewalletId,
-      int ids,
+      int? ids,
       @JsonKey(name: 'phone_number') String? phoneNumber,
       @JsonKey(name: 'card_id') String? cardId,
       String? type,
@@ -125,7 +125,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       ids: ids == freezed
           ? _value.ids
           : ids // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       phoneNumber: phoneNumber == freezed
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
@@ -159,7 +159,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       {String? name,
       String? email,
       @JsonKey(name: 'ewallet_id') String? ewalletId,
-      int ids,
+      int? ids,
       @JsonKey(name: 'phone_number') String? phoneNumber,
       @JsonKey(name: 'card_id') String? cardId,
       String? type,
@@ -204,7 +204,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       ids == freezed
           ? _value.ids
           : ids // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       phoneNumber == freezed
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
@@ -253,7 +253,7 @@ class _$_User implements _User {
   @JsonKey(name: 'ewallet_id')
   final String? ewalletId;
   @override
-  final int ids;
+  final int? ids;
   @override
   @JsonKey(name: 'phone_number')
   final String? phoneNumber;
@@ -330,7 +330,7 @@ abstract class _User implements User {
       String? name,
       String? email,
       @JsonKey(name: 'ewallet_id') String? ewalletId,
-      int ids,
+      int? ids,
       @JsonKey(name: 'phone_number') String? phoneNumber,
       @JsonKey(name: 'card_id') String? cardId,
       String? type,
@@ -347,7 +347,7 @@ abstract class _User implements User {
   @JsonKey(name: 'ewallet_id')
   String? get ewalletId => throw _privateConstructorUsedError;
   @override
-  int get ids => throw _privateConstructorUsedError;
+  int? get ids => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'phone_number')
   String? get phoneNumber => throw _privateConstructorUsedError;

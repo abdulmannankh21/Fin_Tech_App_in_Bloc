@@ -37,14 +37,19 @@ class _LoginState extends State<Login> {
       backgroundColor: Colors.white,
       body: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
-          if (state is LoginError) {
+          if(state is LoginError){
             state.errorMessage.showSnackBar(context);
-          } else if (state is LoginSuccess) {
-            Navigator.of(context).pushNamedAndRemoveUntil(
-              ScreenNames.bottomNavigationHome,
-                  (Route<dynamic> route) => false,
-            );
+          }
+          if (state is LoginSuccess) {
+            if(state.userModel.result!.toLowerCase() == 'failure'){
+              state.userModel.message!.showSnackBar(context);
+            }else {
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                ScreenNames.bottomNavigationHome,
+                    (Route<dynamic> route) => false,
+              );
 
+            }
           } else if (state is ForgetPasswordSuccess) {
             state.model.message.showSnackBar(context);
           }
@@ -76,7 +81,7 @@ class _LoginState extends State<Login> {
                     alignment: Alignment.topLeft,
                     padding: EdgeInsets.only(top: 35, left: 40),
                     child: Text(
-                     //"${loc.AppLocalizations.of(context)?.beneficiaries}",
+                      //"${loc.AppLocalizations.of(context)?.beneficiaries}",
                       "Login",
                       style:Theme.of(context).textTheme.headlineMedium!.copyWith(
                         color: Colors.white,

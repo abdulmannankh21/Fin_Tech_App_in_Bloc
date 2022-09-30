@@ -13,7 +13,6 @@ _$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(
       json['user'] == null
           ? null
           : User.fromJson(json['user'] as Map<String, dynamic>),
-      json['isagent'] as String?,
     );
 
 Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) =>
@@ -22,5 +21,4 @@ Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) =>
       'message': instance.message,
       'token': instance.token,
       'user': instance.user,
-      'isagent': instance.isagent,
     };

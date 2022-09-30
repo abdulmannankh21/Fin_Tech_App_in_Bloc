@@ -36,6 +36,13 @@ class LoginSuccess extends LoginState {
   List<Object?> get props => [userModel];
 }
 
+class LoginFailure extends LoginState {
+  final UserModel userModel;
+  LoginFailure({required this.userModel});
+  @override
+  List<Object?> get props => [userModel];
+}
+
 class ForgetPasswordSuccess extends LoginState {
   final ForgotPasswordModel model;
   ForgetPasswordSuccess(this.model);

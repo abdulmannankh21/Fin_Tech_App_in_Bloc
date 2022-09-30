@@ -22,13 +22,12 @@ class _$UserModelTearOff {
   const _$UserModelTearOff();
 
   _UserModel call(String? result, String? message, String? token,
-      @JsonKey(name: 'user') User? user, String? isagent) {
+      @JsonKey(name: 'user') User? user) {
     return _UserModel(
       result,
       message,
       token,
       user,
-      isagent,
     );
   }
 
@@ -47,7 +46,6 @@ mixin _$UserModel {
   String? get token => throw _privateConstructorUsedError;
   @JsonKey(name: 'user')
   User? get user => throw _privateConstructorUsedError;
-  String? get isagent => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -63,8 +61,7 @@ abstract class $UserModelCopyWith<$Res> {
       {String? result,
       String? message,
       String? token,
-      @JsonKey(name: 'user') User? user,
-      String? isagent});
+      @JsonKey(name: 'user') User? user});
 
   $UserCopyWith<$Res>? get user;
 }
@@ -83,7 +80,6 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
     Object? message = freezed,
     Object? token = freezed,
     Object? user = freezed,
-    Object? isagent = freezed,
   }) {
     return _then(_value.copyWith(
       result: result == freezed
@@ -102,10 +98,6 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User?,
-      isagent: isagent == freezed
-          ? _value.isagent
-          : isagent // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 
@@ -131,8 +123,7 @@ abstract class _$UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
       {String? result,
       String? message,
       String? token,
-      @JsonKey(name: 'user') User? user,
-      String? isagent});
+      @JsonKey(name: 'user') User? user});
 
   @override
   $UserCopyWith<$Res>? get user;
@@ -153,7 +144,6 @@ class __$UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
     Object? message = freezed,
     Object? token = freezed,
     Object? user = freezed,
-    Object? isagent = freezed,
   }) {
     return _then(_UserModel(
       result == freezed
@@ -172,10 +162,6 @@ class __$UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User?,
-      isagent == freezed
-          ? _value.isagent
-          : isagent // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -183,8 +169,8 @@ class __$UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_UserModel implements _UserModel {
-  _$_UserModel(this.result, this.message, this.token,
-      @JsonKey(name: 'user') this.user, this.isagent);
+  _$_UserModel(
+      this.result, this.message, this.token, @JsonKey(name: 'user') this.user);
 
   factory _$_UserModel.fromJson(Map<String, dynamic> json) =>
       _$$_UserModelFromJson(json);
@@ -198,12 +184,10 @@ class _$_UserModel implements _UserModel {
   @override
   @JsonKey(name: 'user')
   final User? user;
-  @override
-  final String? isagent;
 
   @override
   String toString() {
-    return 'UserModel(result: $result, message: $message, token: $token, user: $user, isagent: $isagent)';
+    return 'UserModel(result: $result, message: $message, token: $token, user: $user)';
   }
 
   @override
@@ -218,9 +202,7 @@ class _$_UserModel implements _UserModel {
             (identical(other.token, token) ||
                 const DeepCollectionEquality().equals(other.token, token)) &&
             (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)) &&
-            (identical(other.isagent, isagent) ||
-                const DeepCollectionEquality().equals(other.isagent, isagent)));
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -229,8 +211,7 @@ class _$_UserModel implements _UserModel {
       const DeepCollectionEquality().hash(result) ^
       const DeepCollectionEquality().hash(message) ^
       const DeepCollectionEquality().hash(token) ^
-      const DeepCollectionEquality().hash(user) ^
-      const DeepCollectionEquality().hash(isagent);
+      const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
@@ -245,7 +226,7 @@ class _$_UserModel implements _UserModel {
 
 abstract class _UserModel implements UserModel {
   factory _UserModel(String? result, String? message, String? token,
-      @JsonKey(name: 'user') User? user, String? isagent) = _$_UserModel;
+      @JsonKey(name: 'user') User? user) = _$_UserModel;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$_UserModel.fromJson;
@@ -259,8 +240,6 @@ abstract class _UserModel implements UserModel {
   @override
   @JsonKey(name: 'user')
   User? get user => throw _privateConstructorUsedError;
-  @override
-  String? get isagent => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UserModelCopyWith<_UserModel> get copyWith =>
